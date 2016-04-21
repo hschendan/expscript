@@ -3,7 +3,7 @@ Plan And History
 expscript
 
 TO DO (in order of priority):
-* Channel interpolation option
+* Channel interpolation option before reref (will need to run script first for garv then 2nd time for interpolation/NaNs from interpolation onwards): (a) none (default), (b) interpolation spherical spline, (c) NaNs and use matlab nanmean function during group-level analyses or similar EEGLab/ERPLab solution.
 * Run using Parameter file with options for flags, function parameters: flags, # chans, CAR, exp name, raw file list, windows/linux, RTlock, lrp.
 * 32 channel option
 * Common average reference (CAR) option
