@@ -1,0 +1,21 @@
+Plan And History
+
+expscript
+
+TO DO (in order of priority):
+* Channel interpolation option
+* Run using Parameter file with options for flags, function parameters: flags, # chans, CAR, exp name, raw file list, windows/linux, RTlock, lrp.
+* 32 channel option
+* Common average reference (CAR) option
+* ERPLab Measure: parameter option to choose bins and channels
+* EEG spectra at ERPLab averaging step (does not work in matlab2015b with EEGLab 13.5.4b with ERPLab 5)
+* EEGLab artefact detection
+* ICA for artefact detection
+* RTlock option
+* LRP option
+* Best order for steps: reref
+* Enable steps to be done in different order
+* Windows vs. linux options
+* ANOVA after ERP measure http://www.mathworks.com/help/stats/analysis-of-variance-anova-1.html?s_tid=gn_loc_drop
+* User friendly
+
