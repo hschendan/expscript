@@ -1,0 +1,57 @@
+				***************************
+				*		          *	
+				*   	Instruction	  *
+				*			  *
+				***************************
+---------------------------
+* before run 'std_MAIN.m' *
+---------------------------
+
+Please do the following (make your own note if anything is missing here):
+
+1. install EEGLab v13_5_4b (recommeded not to save in toolbox, but in 'my documents')
+2. install ERPLab v5.0.0.0 (save in EEGLab 'plugins' folder)
+3. install BIOSIG (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins' folder)
+4. have the following 4 files ready in a  folder: 
+	- 'bdf.txt', 
+	- 'biosemi64xyz10-20.xyz', 
+	- 'erpfiles.txt', 
+	- 'garvparm.txt'
+5. have raw EEG data (.bdf) ready in a folder.
+6. save all the scripts into one folder.
+7. modify the directory in the scripts accordingly, as well as the file 'erpfiles.txt'.
+8. set up values in std_flags.m, std_paraset.m. 
+
+------------------
+* Important note *
+------------------
+
+- when set artif=1, artifact detecting function will be generated for each subject which is same as std_artif_T.
+- you need manually modify the function for each subject
+- then set previous flags to 0, set flag artif_all = 1 to run the modified functions, as well as the flags afterwards (e.g. avg) if you need.
+
+------------------------
+* After run std_MAIN.m *
+------------------------
+
+it will:
+
+1. clear the Workspace, clear the screen, display 'Setting up...'
+2. Save Command Window output text to a created file specified by you (see std_MAIN.m)
+3. According to the flags set by you to run selected functions
+4. Choose the operating systems set by you to do the following (if it is Windows): 
+
+	- auto create 5 folders: 'CMD', 'EEG-DATA', 'EEG-ANAL', 'Measure', 'Grand', to the specified path
+	- auto copy 4 files from source folder to 'CMD' folder
+	- auto copy raw .bdf data to EEG-DATA foler
+	- auto create subfolders for each subject in 'EEG-ANAL'
+   	- auto create std_artif_S* (artifact detection function) for each subject for you to modify manually
+        - auto call the std_artif_s* for each subject after your modification
+5. auto save all the steps into subfolders for each subject in 'EEG-ANAL'
+
+-----------
+*   AoB   *
+-----------
+- The scripts are working well on Color data. Please modify them according to your own need.
+- The running sequence of the functions is the same as their sequence in std_MAIN.m.
+- It took more than 8 hours to run the whole batch of Color data when error free.
