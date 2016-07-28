@@ -1,0 +1,522 @@
+bin 1		
+	All Stim	
+	{7-249;255}.{250-254}{5;6;254}       	
+bin 2 		
+	Pseudos 	
+	{255}.{254}{5;6;254}	
+bin 3		
+	ObjPics 	
+	{7-249;255}.{250-253}{5;6;254}	
+bin 4		
+	ObjPics noFil	
+	{11-210}.{250-253}{5;6;254}	
+bin 5		
+	Fil	
+	{7-10;211-249}.{250-253}{5;6;254}	
+bin 6		
+	Congruent	
+        {7-249;255}.{250;252}{5;6;254}		
+bin 7		
+	Incongru	
+	{7-249;255}.{251;253}{5;6;254}	
+bin 8		
+	Congru noFil	
+	{11-210}.{250;252}{5;6;254}	
+bin 9		
+	Incongru noFIl	
+	{11-210}.{251;253}{5;6;254}	
+bin 10		
+	Congruent Id	
+	{7-249;255}.{250;252}{5}	
+bin 11		
+	Incongru Id	
+	{7-249;255}.{251;253}{5}	
+bin 12		
+	Congru noFil Id	
+	{11-210}.{250;252}{5}	
+bin 13		
+	Incongru noFIl Id	
+	{11-210}.{251;253}{5}	
+bin 14		
+	Diagno 	
+	{100-199;211-218;255}.{250;251}{5;6;254}	
+bin 15		
+	NonDiagno	
+	{7-99;200-210;219-249;255}.{252;253}{5;6;254}	
+bin 16		
+	Diagno noFil	
+	{100-199}.{250;251}{5;6;254}	
+bin 17		
+	NonDiagno noFil	
+	{11-99;200-210}.{252;253}{5;6;254}	
+bin 18		
+	Diagno Id	
+	{100-199;211-218;255}.{250;251}{5}	
+bin 19		
+	NonDiagno Id	
+	{7-99;200-210;219-249;255}.{252;253}{5}	
+bin 20		
+	Diagno noFil Id	
+	{100-199}.{250;251}{5}	
+bin 21		
+	NonDiagno noFil Id	
+	{11-99;200-210}.{252;253}{5}	
+bin 22		
+	Congru Diagno 	
+	{100-199;211-218}.{250}{5;6;254}	
+bin 23		
+	Congru Nondiagno 	
+	{7-99;200-210;219-249;255}.{252}{5;6;254}	
+bin 24		
+	Incongru Diagno 	
+	{100-199;211-218}.{251}{5;6;254}	
+bin 25		
+	Incongru Nondiagno 	
+	{7-99;200-210;219-249;255}.{253}{5;6;254}	
+bin 26		
+	Congru Diagno noFil	
+	{100-199}.{250}{5;6;254}	
+bin 27		
+	Congru Nondiagno noFil	
+	{11-99;200-210}.{252}{5;6;254}	
+bin 28		
+	Incongru Diagno noFil	
+	{100-199}.{251}{5;6;254}	
+bin 29		
+	Incongru Nondiagno noFil               	
+	{11-99;200-210}.{253}{5;6;254}	
+bin 30		
+	Congru Diagno IdRT          	
+	{100-199;211-218}.{250}{5:rt<"CongDia">}	
+bin 31		
+	Congru Nondiagno IdRT          	
+	{7-99;200-210;219-249;255}.{252}{5:rt<"CongNondia">}
+bin 32		
+	Incongru Diagno IdRT          	
+	{100-199;211-218}.{251}{5:rt<"IncongDia">}	
+bin 33		
+	Incongru Nondiagno IdRT          	
+	{7-99;200-210;219-249;255}.{253}{5:rt<"IncongNondia">}	
+bin 34		
+	Congru Diagno noFil IdRT          	
+	{100-199}.{250}{5:rt<"CongDiaNofil">}	
+bin 35		
+	Congru Nondiagno noFil IdRT          	
+	{11-99;200-210}.{252}{5:rt<"CongNondiaNofil">}
+bin 36		
+	Incongru Diagno noFil IdRT          	
+	{100-199}.{251}{5:rt<"IncongDiaNofil">}
+bin 37		
+	Incongru Nondiagno noFil IdRT          	
+	{11-99;200-210}.{253}{5:rt<"IncongNondiaNofil">}	
+bin 38		
+	Pseudos IdRT          	
+	{255}.{254}{6:rt<"Pseudos">}	
+bin 39		
+	Congru Diagno NoId	
+	{100-199;211-218}.{250}{6}	
+bin 40		
+	Congru Nondiagno NoId	
+	{7-99;200-210;219-249;255}.{252}{6}	
+bin 41		
+	Incongru Diagno NoId	
+	{100-199;211-218}.{251}{6}	
+bin 42		
+	Incongru Nondiagno NoId	
+	{7-99;200-210;219-249;255}.{253}{6}	
+bin 43		
+	Congru Diagno noFil NoId	
+	{100-199}.{250}{6}	
+bin 44		
+	Congru Nondiagno noFil NoId	
+	{11-99;200-210}.{252}{6}	
+bin 45		
+	Incongru Diagno noFil NoId	
+	{100-199}.{251}{6}	
+bin 46		
+	Incongru Nondiagno noFil NoId	
+	{11-99;200-210}.{253}{6}	
+bin 47		
+	Pseudos NoId	
+	.{255}{254}{5}	
+bin 48		
+	Congru Diagno Noresp	
+	{100-199;211-218}.{250}{254}	
+bin 49		
+	Congru Nondiagno Noresp	
+	{7-99;200-210;219-249;255}.{252}{254}	
+bin 50		
+	Incongru Diagno Noresp	
+	{100-199;211-218}.{251}{254}	
+bin 51		
+	Incongru Nondiagno Noresp	
+	{7-99;200-210;219-249;255}.{253}{254}	
+bin 52		
+	Congru Diagno noFil Noresp	
+	{100-199}.{250}{254}	
+bin 53		
+	Congru Nondiagno noFil Noresp	
+	{11-99;200-210}.{252}{254}	
+bin 54		
+	Incongru Diagno noFil Noresp	
+	{100-199}.{251}{254}	
+bin 55		
+	Incongru Nondiagno noFil Noresp	
+	{11-99;200-210}.{253}{254}	
+bin 56		
+	Pseudos Noresp	
+	{255}.{254}{254}	
+bin 57		
+	All Stim Rat	
+	{7-249;255}.{250-254}{5;6}{254}{1-4}	
+bin 58		
+	Pseudos Rat	
+	.{255}{5;6}{254}{1-4}	
+bin 59		
+	ObjPics Rat	
+	{7-249;255}.{250-253}{5;6}{254}{1-4}	
+bin 60		
+	ObjPics noFil Rat	
+	{11-210}.{250-253}{5;6}{254}{1-4}	
+bin 61		
+	Fil Rat	
+	{7-10;211-249}.{250-253}{5;6}{254}{1-4}	
+bin 62		
+	Congru Rat	
+	{7-249;255}.{250;252}{5;6}{254}{1-4}	
+bin 63		
+	Incongru Rat	
+	{7-249;255}.{251;253}{5;6}{254}{1-4}	
+bin 64		
+	Congru Rat NoFil	
+	{11-210}.{250;252}{5;6}{254}{1-4}	
+bin 65		
+	Incongru Rat NoFil	
+	{11-210}.{251;253}{5;6}{254}{1-4}	
+bin 66		
+	Diagno Rat	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{1-4}	
+bin 67		
+	NonDiagno Rat	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{1-4}	
+bin 68		
+	Diagno Rat noFil	
+	{100-199}.{250;251}{5;6}{254}{1-4}	
+bin 69		
+	NonDiagno Rat noFil	
+	{11-99;200-210}.{252;253}{5;6}{254}{1-4}	
+bin 70		
+	Congru Diagno Rat	
+	{100-199;211-218}.{250}{5;6}{254}{1-4}	
+bin 71		
+	Congru Nondiagno Rat	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{1-4}	
+bin 72		
+	Incongru Diagno Rat	
+	{100-199;211-218}.{251}{254}{1-4}	
+bin 73		
+	Incongru Nondiagno Rat	
+	{7-99;200-210;219-249;255}.{253}{254}{1-4}	
+bin 74		
+	Congru Diagno noFil Rat	
+	{100-199}.{250}{5;6}{254}{1-4}	
+bin 75		
+	Congru Nondiagno noFil Rat	
+	{11-99;200-210}.{252}{5;6}{254}{1-4}	
+bin 76		
+	Incongru Diagno noFil Rat	
+	{100-199}.{251}{5;6}{254}{1-4}	
+bin 77		
+	Incongru Nondiagno noFil Rat                	
+	{11-99;200-210}.{253}{5;6}{254}{1-4}	
+bin 78		
+	Pseudos Rat3and4	
+	.{255}{5;6}{254}{3;4}	
+bin 79		
+	ObjPics Rat3and4	
+	{7-249;255}.{250-253}{5;6}{254}{3;4}	
+bin 80		
+	ObjPics noFil Rat3and4	
+	{11-210}.{250-253}{5;6}{254}{3;4}	
+bin 81		
+	Fil Rat3and4	
+	{7-10;211-249}.{250-253}{5;6}{254}{3;4}	
+bin 82		
+	Congru Rat3and4	
+	{7-249;255}.{250;252}{5;6}{254}{3;4}	
+bin 83		
+	Incongru Rat3and4	
+	{7-249;255}.{251;253}{5;6}{254}{3;4}	
+bin 84		
+	Diagno Rat3and4	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{3;4}	
+bin 85		
+	NonDiagno Rat3and4	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{3;4}	
+bin 86		
+	Congru Diagno Rat3and4	
+	{100-199;211-218}.{250}{5;6}{254}{3;4}	
+bin 87		
+	Congru Nondiagno Rat3and4	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{3;4}	
+bin 88		
+	Incongru Diagno Rat3and4	
+	{100-199;211-218}.{251}{5;6}{254}{3;4}	
+bin 89		
+	Incongru Nondiagno Rat3and4	
+	{7-99;200-210;219-249;255}.{253}{5;6}{254}{3;4}	
+bin 90		
+	Congru Diagno noFil Rat3and4	
+	{100-199}.{250}{5;6}{254}{3;4}	
+bin 91		
+	Congru Nondiagno noFil Rat3and4	
+	{11-99;200-210}.{252}{5;6}{254}{3;4}	
+bin 92		
+	Incongru Diagno noFil Rat3and4	
+	{100-199}.{251}{5;6}{254}{3;4}	
+bin 93		
+	Incongru Nondiagno noFil Rat3and4             	
+	{11-99;200-210}.{253}{5;6}{254}{3;4}	
+bin 94		
+	Pseudos Rat1and2	
+	.{255}{5;6}{254}{1;2}	
+bin 95		
+	ObjPics Rat1and2	
+	{7-249;255}.{250-253}{5;6}{254}{1;2}	
+bin 96		
+	ObjPics noFil Rat1and2	
+	{11-210}.{250-253}{5;6}{254}{1;2}	
+bin 97		
+	Fil Rat1and2	
+	{7-10;211-249}.{250-253}{5;6}{254}{1;2}	
+bin 98		
+	Congru Rat1and2	
+	{7-249;255}.{250;252}{5;6}{254}{1;2}	
+bin 99		
+	Incongru Rat1and2	
+	{7-249;255}.{251;253}{5;6}{254}{1;2}	
+bin 100		
+	Diagno Rat1and2	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{1;2}	
+bin 101		
+	NonDiagno Rat1and2	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{1;2}	
+bin 102		
+	Congru Diagno Rat1and2	
+	{100-199;211-218}.{250}{5;6}{254}{1;2}	
+bin 103		
+	Congru Nondiagno Rat1and2	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{1;2}	
+bin 104		
+	Incongru Diagno Rat1and2	
+	{100-199;211-218}.{251}{5;6}{254}{1;2}	
+bin 105		
+	Incongru Nondiagno Rat1and2	
+	{7-99;200-210;219-249;255}.{253}{5;6}{254}{1;2}	
+bin 106		
+	Congru Diagno noFil Rat1and2	
+	{100-199}.{250}{5;6}{254}{1;2}	
+bin 107		
+	Congru Nondiagno noFil Rat1and2	
+	{11-99;200-210}.{252}{5;6}{254}{1;2}	
+bin 108		
+	Incongru Diagno noFil Rat1and2	
+	{100-199}.{251}{5;6}{254}{1;2}	
+bin 109		
+	Incongru Nondiagno noFil Rat1and2             	
+	{11-99;200-210}.{253}{5;6}{254}{1;2}	
+bin 110		
+	Pseudos Ratveryunsure	
+	.{255}{5;6}{254}{1}	
+bin 111		
+	ObjPics Ratveryunsure	
+	{7-249;255}.{250-253}{5;6}{254}{1}	
+bin 112		
+	ObjPics noFil Ratveryunsure	
+	{11-210}.{250-253}{5;6}{254}{1}	
+bin 113		
+	Fil Ratveryunsure	
+	{7-10;211-249}.{250-253}{5;6}{254}{1}	
+bin 114		
+	Congru Ratveryunsure	
+	{7-249;255}.{250;252}{5;6}{254}{1}	
+bin 115		
+	Incongru Ratveryunsure	
+	{7-249;255}.{251;253}{5;6}{254}{1}	
+bin 116		
+	Diagno Ratveryunsure	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{1}	
+bin 117		
+	NonDiagno Ratveryunsure	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{1}	
+bin 118		
+	Congru Diagno Ratveryunsure	
+	{100-199;211-218}.{250}{5;6}{254}{1}	
+bin 119		
+	Congru Nondiagno Ratveryunsure	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{1}	
+bin 120		
+	Incongru Diagno Ratveryunsure	
+	{100-199;211-218}.{251}{5;6}{254}{1}	
+bin 121		
+	Incongru Nondiagno Ratveryunsure	
+	{7-99;200-210;219-249;255}.{253}{5;6}{254}{1}	
+bin 122		
+	Congru Diagno noFil Ratveryunsure	            
+	{100-199}.{250}{5;6}{254}{1}	
+bin 123		
+	Congru Nondiagno noFil Ratveryunsure	
+	{11-99;200-210}.{252}{5;6}{254}{1}	
+bin 124		
+	Incongru Diagno noFil Ratveryunsure	
+	{100-199}.{251}{5;6}{254}{1}	
+bin 125		
+	Incongru Nondiagno noFil Ratveryunsure	
+	{11-99;200-210}.{253}{5;6}{254}{1}	
+bin 126		
+	Pseudos Ratunsure	
+	.{255}{5;6}{254}{2}	
+bin 127		
+	ObjPics Ratunsure	
+	{7-249;255}.{250-253}{5;6}{254}{2}	
+bin 128		
+	ObjPics noFil Ratunsure	
+	{11-210}.{250-253}{5;6}{254}{2}	
+bin 129		
+	Fil Ratunsure	
+	{7-10;211-249}.{250-253}{5;6}{254}{2}	
+bin 130		
+	Congru Ratunsure	
+	{7-249;255}.{250;252}{5;6}{254}{2}	
+bin 131		
+	Incongru Ratunsure	
+	{7-249;255}.{251;253}{5;6}{254}{2}	
+bin 132		
+	Diagno Ratunsure	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{2}	
+bin 133		
+	NonDiagno Ratunsure	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{2}	
+bin 134		
+	Congru Diagno Ratunsure	
+	{100-199;211-218}.{250}{5;6}{254}{2}	
+bin 135		
+	Congru Nondiagno Ratunsure	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{2}	
+bin 136		
+	Incongru Diagno Ratunsure	
+	{100-199;211-218}.{251}{5;6}{254}{2}	
+bin 137		
+	Incongru Nondiagno Ratunsure	
+	{7-99;200-210;219-249;255}.{253}{5;6}{254}{2}	
+bin 138		
+	Congru Diagno noFil Ratunsure	            
+	{100-199}.{250}{5;6}{254}{2}	
+bin 139		
+	Congru Nondiagno noFil Ratunsure	
+	{11-99;200-210}.{252}{5;6}{254}{2}	
+bin 140		
+	Incongru Diagno noFil Ratunsure	
+	{100-199}.{251}{5;6}{254}{2}	
+bin 141		
+	Incongru Nondiagno noFil Ratunsure	
+	{11-99;200-210}.{253}{5;6}{254}{2}	
+bin 142		
+	Pseudos Ratsure	
+	.{255}{5;6}{254}{3}	
+bin 143		
+	ObjPics Ratsure	
+	{7-249;255}.{250-253}{5;6}{254}{3}	
+bin 144		
+	ObjPics noFil Ratsure	
+	{11-210}.{250-253}{5;6}{254}{3}	
+bin 145		
+	Fil Ratsure	
+	{7-10;211-249}.{250-253}{5;6}{254}{3}	
+bin 146		
+	Congru Ratsure	
+	{7-249;255}.{250;252}{5;6}{254}{3}	
+bin 147		
+	Incongru Ratsure	
+	{7-249;255}.{251;253}{5;6}{254}{3}	
+bin 148		
+	Diagno Ratsure	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{3}	
+bin 149		
+	NonDiagno Ratsure	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{3}	
+bin 150		
+	Congru Diagno Ratsure	
+	{100-199;211-218}.{250}{5;6}{254}{3}	
+bin 151		
+	Congru Nondiagno Ratsure	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{3}	
+bin 152		
+	Incongru Diagno Ratsure	
+	{100-199;211-218}.{251}{5;6}{254}{3}	
+bin 153		
+	Incongru Nondiagno Ratsure	
+	{7-99;200-210;219-249;255}.{253}{5;6}{254}{3}	
+bin 154		
+	Congru Diagno noFil Ratsure	
+	{100-199}.{250}{5;6}{254}{3}	
+bin 155		
+	Congru Nondiagno noFil Ratsure	
+	{11-99;200-210}.{252}{5;6}{254}{3}	
+bin 156		
+	Incongru Diagno noFil Ratsure	
+	{100-199}.{251}{5;6}{254}{3}	
+bin 157		
+	Incongru Nondiagno noFil Ratsure	
+	{11-99;200-210}.{253}{5;6}{254}{3}	
+bin 158		
+	Pseudos Ratverysure	
+	.{255}{5;6}{254}{4}	
+bin 159		
+	ObjPics Ratverysure	
+	{7-249;255}.{250-253}{5;6}{254}{4}	
+bin 160		
+	ObjPics noFil Ratverysure	
+	{11-210}.{250-253}{5;6}{254}{4}	
+bin 161		
+	Fil Ratverysure	
+	{7-10;211-249}.{250-253}{5;6}{254}{4}	
+bin 162		
+	Congru Ratverysure	
+	{7-249;255}.{250;252}{5;6}{254}{4}	
+bin 163		
+	Incongru Ratverysure	
+	{7-249;255}.{251;253}{5;6}{254}{4}	
+bin 164		
+	Diagno Ratverysure	
+	{100-199;211-218;255}.{250;251}{5;6}{254}{4}	
+bin 165		
+	NonDiagno Ratverysure	
+	{7-99;200-210;219-249;255}.{252;253}{5;6}{254}{4}	
+bin 166		
+	Congru Diagno Ratverysure	
+	{100-199;211-218}.{250}{5;6}{254}{4}	
+bin 167		
+	Congru Nondiagno Ratverysure	
+	{7-99;200-210;219-249;255}.{252}{5;6}{254}{4}	
+bin 168		
+	Incongru Diagno Ratverysure	
+	{100-199;211-218}.{251}{5;6}{254}{4}	
+bin 169		
+	Incongru Nondiagno Ratverysure	
+	{7-99;200-210;219-249;255}.{253}{5;6}{254}{4}	
+bin 170		
+	Congru Diagno noFil Ratverysure	
+	{100-199}.{250}{5;6}{254}{4}	
+bin 171		
+	Congru Nondiagno noFil Ratverysure	
+	{11-99;200-210}.{252}{5;6}{254}{4}	
+bin 172		
+	Incongru Diagno noFil Ratverysure	
+	{100-199}.{251}{5;6}{254}{4}	
+bin 173		
+	Incongru Nondiagno noFil Ratverysure	
+	{11-99;200-210}.{253}{5;6}{254}{4}	
+bin 174		
+	Allstim noRating response	
+	{7-249;255}.{250-254}{5;6}{254}{~1-4}	
