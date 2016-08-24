@@ -62,8 +62,7 @@ allbins = 174; % Modify for your experiment: total # bins in bin descriptor file
 file1 = 'biosemi64xyz10-20.xyz';
 file2 = 'garvparm.txt';
 file3 = 'erpfiles.txt';
-%pathname_write = ??
-%impexpsubject20 = ??
+
 
 set = '.set';
 
