@@ -21,7 +21,7 @@ Linux = 0;
 save_everything  = 0;   % Only used when NOT running modular
 mod = 1;         % Run MODULAR, load and save each step
 ch64 = 1;        % 64 channel, else 32 channel
-binlisb = 0;     % default is 0; binlister option: Use bin # to label epochs, transfer to EEG structure checked; otherwise no transfer
+binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, transfer to EEG structure checked; otherwise no transfer
 CAR = 0;         % Common average reference, in addition to standard mastoid reference
 lrp = 0;         % not implemented % Use for Lateralized Readiness Potential (LRP)
                   
