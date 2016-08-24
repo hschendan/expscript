@@ -10,7 +10,7 @@ global save_everything mod ch64 CAR lrp binlisb
 global os paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all avg erprefch gavg meas
 global allbins file1 file2 file3 set 
                       
-expname = 'std9';
+expname = 'std9'; % Modify for your experiment: Your experiment name here, e.g., color, vishape, untask
 pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard9\'; % Modify for your experiment: where parent folder is 
 
 %Flags for choosing operating systems
