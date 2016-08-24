@@ -11,7 +11,7 @@ global os paraset import chanloc elist binlis eegrefch epoch addeye artif artif_
 global allbins file1 file2 file3 set 
                       
 expname = 'std9';
-pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard9\'; % where parent folder is 
+pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard9\'; % Modify for your experiment: where parent folder is 
 
 %Flags for choosing operating systems
 Windows = 1; 
