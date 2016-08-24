@@ -1,0 +1,52 @@
+Bugs and Issues
+
+20160824
+Instruction9.txt
+7.
+Std_paraset.m
+Rawdata needs to be modified to list raw bdf files for your experiment.
+FIXED: Added comment to remind experimenter to add their raw data files.
+TO DO: Read list of raw files from raw file directory.
+
+Erpfiles.txt should be generated automatically by the script at the measure stage, since the script creates these input files.
+TO DO: Create Erpfiles.txt at averaging stage.
+
+Flags.m
+allbins = 174; 
+This needs to change for each experiment bin descriptor file (bdf command file).
+FIXED: Added comment to remind experimenter to do this
+
+CAR= 0; unless you want to do CAR
+FIXED: Added comment 
+
+8.
+-stage 1
+Cannot find ‘clr’ in flags or paraset
+
+Flags.m
+Delete:
+%pathname_write = ??
+%impexpsubject20 = ??
+FIXED:  deleted
+
+
+binlisb = 0;     % default is 1; binlister option: Use bin # to label epochs, transfer to EEG structure checked
+
+***** OK for now, but at some point: We need to determine if we want to: transfer to EEG structure
+
+
+The std_artif.m files for each subject should be put in the CMD directory because these will be command files for the script. They could also go in each subjects directory, S01, S02, etc.
+
+Change the RT output function to create xls files instead of .txt files. Also put the RT output files in a single directory: BEH-ANAL/RT. Also put the binlister txt output in directory: BLOUT. Put all other text files or other non-EEG/ERP output files in a directory: ANAL-OUT.
+
+
+ERRORS:
+I think the error is due to running the script twice. But why did this error not occur for S01?
++++++++++++++++
++ std_artif_S02 already exist! 
++++++++++++++++
+
+
++++++++++++++++
++ std_artif_S03 already exist! 
++++++++++++++++
