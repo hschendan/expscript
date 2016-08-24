@@ -28,12 +28,14 @@ Please do the following (make your own note if anything is missing here):
 	- in  the file 'erpfiles.txt'.
 8. set up values in 'std_flags.m'and 'std_paraset.m' for the following stages:
 	- stage 1 
-		-- set 'clr' = 1;
+		-- set 'clr' = 1; (cannot find in flags or paraset-- is this obsolete?)
 		-- set flags in stage 1 equal to '1';
 		-- leave the rest of flags equal to '0'
+		-- In 'std_flags.m': set allbins = total number of bins in bdf.txt (prefix is omitted here); default = 174 bins
+		-- In 'std_paraset.m': rawdata = {'P1_C1I2-Deci.bdf'...} replace each filename with those for the raw biosemi bdf EEG data files for your experiment.
 		-- run 'MAIN.m'
         - stage 2 <before artifact detection> : 
-		-- change 'clr'= 0. ** Important ** 
+		-- change 'clr'= 0. ** Important ** (cannot find in flags or paraset-- is this obsolete?)
 		-- modify auto-generated artif function for each subjects based ** Important ** 
 		-- set flags at stage 2 equal to '1'
 		-- run 'MAIN.m again
@@ -66,9 +68,9 @@ it will:
 	- 'p' for epoch
 	- 'y' for addeye
 	- 'a' for artif
-	- 'M12' for eegrefch
-	- 'M12.erp' for erprefch
-	- 'CAR' for common reference
+	- 'M12' for eegrefch (default reference is average of left mastoid [M1] and right mastoid [M2]) 
+	- 'M12.erp' for erprefch (default reference is average of left mastoid [M1] and right mastoid [M2]) 
+	- 'CAR' for common average reference
 -----------
 *   AoB   *
 -----------
