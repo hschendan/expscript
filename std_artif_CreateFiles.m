@@ -7,7 +7,7 @@ disp('Creating arti detection files for each subject...')
 fprintf('\n+++++++++++++++\n+ Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
 % open template file for artifact detection
-fidIn = fopen('C:\Users\pzhao\Documents\MATLAB\standard8\std_artif_T.m');
+fidIn = fopen('C:\Users\pzhao\Documents\MATLAB\standard10\std_artif_T.m');
 
 % read in file
 tline = fgets(fidIn);
@@ -18,7 +18,7 @@ while ischar(tline)
     index = index + 1;
 end
 
-% replace first row
+% replace the first row
 for s=1:nraw
     data{1,1} = strcat('function std_artif_', subject{s},'(s)');
     name = strcat('std_artif_',subject{s},'.m');

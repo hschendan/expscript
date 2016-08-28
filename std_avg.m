@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Average ERP Pg. 28
+% Average ERP Pg. 28
 % Note: Added eye channels only show in classic ERP plot, untick all
 % channels, plot, then plot again tick all chans
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,7 +12,6 @@ disp('ERP Averaging: Working ...')
 
 fprintf('\n+++++++++++++++\n+ (avg) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
-
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];      
     if exist(sname, 'file')>0               
@@ -23,7 +22,7 @@ for s=1:nraw
         % matlab2015b, eeglab13, erplab 5 spectra doesn't work
         %ERP = pop_averager( EEG , 'Compute', 'TFFT', 'Criterion', 'good', 'ExcludeBoundary', 'on', 'SEM', 'on', 'TaperWindow', {'Hanning' [-200 900]});
         ERP = pop_averager( EEG , 'Criterion', 'good', 'ExcludeBoundary', 'on', 'SEM', 'on' );
-        erpname = [subject{s} 'M12_ar'];  % name for erpset menu
+        erpname = [subject{s} '_ar'];  % name for erpset menu
         fname_erp= fullfile(data_path{s}, [erpname '.erp']);
         pop_savemyerp(ERP, 'erpname', erpname, 'filename', fname_erp, 'Warning', 'off'); 
         % RTs for ERPs (redundant with ar above?)
@@ -32,17 +31,17 @@ for s=1:nraw
         values = pop_rt2text(ERP, 'arfilter', 'on', 'eventlist',  1, 'filename', [data_path{s} erpname '_erp_RTs.txt'], 'header', 'on', 'listformat', 'itemized' );
         % All Trials
         ERP = pop_averager( EEG , 'Criterion', 'all', 'ExcludeBoundary', 'on', 'SEM', 'on' );
-        erpname = [subject{s} 'M12_all'];  % name for erpset menu
+        erpname = [subject{s} '_al'];  % name for erpset menu
         fname_erp= fullfile(data_path{s}, [erpname '.erp']);
         pop_savemyerp(ERP, 'erpname', erpname, 'filename', fname_erp, 'Warning', 'off'); 
         % Artifact Trials
         ERP = pop_averager( EEG , 'Criterion', 'bad', 'ExcludeBoundary', 'on', 'SEM', 'on' );
-        erpname = [subject{s} 'M12_bad'];  % name for erpset menu
+        erpname = [subject{s} '_ba'];  % name for erpset menu
         fname_erp= fullfile(data_path{s}, [erpname '.erp']);
         pop_savemyerp(ERP, 'erpname', erpname, 'filename', fname_erp, 'Warning', 'off'); 
         % Get Evoked spectra, Good trials, no artifacts
         ERP = pop_averager( EEG , 'Compute', 'EFFT', 'Criterion', 'good', 'ExcludeBoundary', 'on', 'SEM', 'on' );
-        erpname = [subject{s} 'EFFT_M12_ar'];  % name for erpset menu
+        erpname = [subject{s} '_ae'];  % name for erpset menu
         fname_erp= fullfile(data_path{s}, [erpname '.erp']);
         pop_savemyerp(ERP, 'erpname', erpname, 'filename', fname_erp, 'Warning', 'off');  
         % RTs

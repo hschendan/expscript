@@ -6,11 +6,18 @@
 
 % Stream order: eeglab -> flags -> os -> paraset -> mod -> import ->
 % -> elist -> binlis ->chanloc -> epoch -> addeye -> artif -> eegrefch(opt.)-> avg -> erprefch -> meas -> gavg(with lp)
-
+% Fixed order: elist -> binlis; commands after this until avg step can change order by moving commands below into new order; commands from avg onwards fixed order
 % Save Command Window output text to a created file 
-diary('C:\Users\pzhao\Documents\MATLAB\standard9\diary9.txt'); %***Modify to yours ***%
 
-clr = 1; % This need to be set to 0 at stage 2 below, otherwise, you have to assign the sfx manually in artif_all.m
+diary('C:\Users\pzhao\Documents\MATLAB\standard10\diary10.txt'); %***Modify to yours ***%
+
+                 %*****************************%
+                 %          Stage 1            %
+                 %*****************************%
+
+
+clr = 1; % for stage 1;%*** modify to be 0 at stage 2***%, otherwise you have to assign the sfx manually in artif_all.m
+
 
 if clr
     std_clear;

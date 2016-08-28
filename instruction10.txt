@@ -1,0 +1,76 @@
+				***************************
+				*		          *	
+				*   Instruction v.10      *
+				*			  *
+				***************************
+---------------------------
+* before run 'std_MAIN.m' *
+---------------------------
+
+Please do the following (make your own note if anything is missing here):
+
+1. install EEGLab v13_5_4b (recommed not to save in toolbox, but in 'my documents')
+2. install ERPLab v5.0.0.0 (save in EEGLab 'plugins' folder)
+3. install BIOSIG (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins' folder)
+4. have the following 3 files ready in a  folder named '3Files': 
+	- 'bdf.txt', 
+	- 'biosemi64xyz10-20.xyz',  
+	- 'garvparm.txt'
+5. have the file 'biosemi64xyz10-20.xyz' ready
+5. download and save all the scripts into one folder (e.g. standard10).
+6. have raw EEG data (.bdf) ready somewhere. 
+7. modifications are needed as the following (prefix is omitted here):
+	- in 'MAIN.m' :(1) the dir and (2) the name of 'diary'
+	- in 'flags.m':  (1) 'expname'   (2) 'pathname_all' (*very important to keep the last '\') (3) 'pathname_raw'(*very important to keep the last '\')
+	- in 'paraset.m': (1) expression
+	- in 'artif.CreateFiles.m': (1) 'fidIn'
+8. set up all values in 'flag.m' (please see the instruction in flag.m)
+         
+------------------------
+* After run std_MAIN.m *
+------------------------
+
+it will:
+
+1. clear the Workspace, clear the screen, display 'Setting up...'
+2. Save Command Window output text to a created file specified by you (see MAIN.m)
+3. According to the flags set by you to run selected functions
+
+if os is Windows, automatically do the following   
+- create 4 folders: 'CMD', 'EEG-ANAL', 'Measure', 'Grand', to the specified path
+- copy 3 files from source folder to 'CMD' folder
+- create erpfiles.txt to  'CMD' folder
+- optional to copy raw .bdf data to EEG-DATA-COPY foler
+- Read list of raw files from raw file directory, and sort the order
+- create subfolders for each subject in 'EEG-ANAL', and import the raw data.
+- create std_artif_S* (artifact detection function) for each subject, then you can modify manually
+- call the std_artif_s* for each subject after your modification
+- save all steps into subfolder 'EEG-ANAL' for each subject 
+
+3. simplify the original program in the way that repeatedly used variables in functions are set to be global and only need to modify once.
+4. after each function, a suffix will be added to the saved file names as the following:
+	- 'e' for elist
+	- 'b' for blins
+	- 'c' for chanloc
+	- 'p' for epoch
+	- 'y' for addeye
+	- 'a' for artif
+	- 'aM' for eegrefch (default reference is average of left mastoid [M1] and right mastoid [M2])
+	- 'ca' for common average reference (for EEGs)
+
+	- '_ar' for reject the artifacts (for ERPs)
+	- '_al' for all trials (for ERPs)
+	- '_ba' for bad trials with artifacts (for ERPs)
+	- '_ae' for reject artifacts and EFFT (for ERPs)
+
+	- 'mM' for erprefch, reference to mean of M1 and M2 (mean mastoids); note, aM = mM (never do both)
+	- 'CA`' for common average reference (for ERPs); note, ca = CA, never do both
+
+-----------
+*   AoB   *
+-----------
+
+- suffix in epoch.m is changed from 'e' to 'p' due to the same as in 'elist.m'
+- It will take more than 8 hours to run the whole batch of Color data when error free.
+- if apply the script on other dataset, replace all 'std' by your 'expname', e.g. 'color'
+- original RTlock is removed

@@ -4,27 +4,32 @@
 
 function std_import 
 
-global nraw subject pathname_raw rawdata data_path sfx set
+global copydata pathname_all nraw subject pathname_raw rawdata data_path sfx set
 	
 disp('Importing biosemi data.bdf into EEGLab and saving as EEGLab sets ...')  
 
-%copy raw data from source to destination folder 'EEG-DATA'; 
-source = 'C:\Users\pzhao\Documents\MATLAB\ColorRawData'; % ** Modify to yours ** %
-
 sfx = '_'; %initial suffix
 
-for s = 1:nraw
+if copydata  % it is optional to copy data to a folder%
     
-    if exist(rawdata{s}, 'file')== 0 
-      copyfile([source '\' rawdata{s}],fullfile(pathname_raw));  
-      fprintf('\n+++++++++++++++\n+ copy raw data %s to EEG-DATA folder... \n+++++++++++++++\n\n', rawdata{s});
-
-    else
-      fprintf('\n+++++++++++++++\n+ raw data %s already exist! \n+++++++++++++++\n\n', rawdata{s});
+    fname = 'EEG-DATA-COPY';
+    if exist(fullfile(pathname_all, fname, 'dir')) == 0    %if the folder does not exist
+       mkdir(pathname_all, fname);              % then create new folder in parent folder      
     end
-end
-
-fprintf('\n+++++++++++++++\n+ Copy %d raw data to EEG-DATA folder: done! ... \n+++++++++++++++\n\n', nraw);
+    
+    pathname_copy  = strcat(pathname_all, fname,'\');     % where raw bdfs are copied
+    
+    for s = 1:nraw
+        if exist(rawdata{s}, 'file')== 0 
+            copyfile([pathname_raw rawdata{s}],fullfile(pathname_copy));  
+            fprintf('\n+++++++++++++++\n+ copy raw data %s to EEG-DATA folder... \n+++++++++++++++\n\n', rawdata{s});
+        else
+            fprintf('\n+++++++++++++++\n+ raw data %s already exist! \n+++++++++++++++\n\n', rawdata{s});
+        end
+    end
+    
+    fprintf('\n+++++++++++++++\n+ Copy %d raw data to the folder EEG-DATA-COPY: done! ... \n+++++++++++++++\n\n', nraw);
+end 
 
 for s=1:nraw
     if exist([subject{s} sfx set], 'file')== 0 || exist([subject{s} sfx '.fdt'], 'file')== 0
