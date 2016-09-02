@@ -37,14 +37,17 @@ binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, tr
                  %          Stage 1            %
                  %  set 'clr' = 1 in 'MAIN.m'  %
                  %*****************************%
+                 
+      %*if not run functions in one go, need to set 'clr' = 0 after the first batch of functions.
+              
                         
-os = 1;          %This only need to run once
+os = 0;          %This only need to run once
 paraset = 0;     %This only need to run once
 
 % ERPLab Function Flags in sequence
 import = 0;      %This only need run once
 elist = 0;       % EventList
-binlis =  1;     % Binlister
+binlis =  0;     % Binlister
 chanloc = 0;     % Add channel locations
 epoch = 0;       % BinEpoch
 addeye = 0;      % Add eye channels
