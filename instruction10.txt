@@ -37,7 +37,7 @@ it will:
 3. According to the flags set by you to run selected functions
 
 if os is Windows, automatically do the following   
-- create 4 folders: 'CMD', 'EEG-ANAL', 'Measure', 'Grand', to the specified path
+- create 7 folders: 'CMD', 'EEG-ANAL', 'Measure', 'Grand', 'BEH-ANAL', 'RT', 'BLO' to the specified path
 - copy 3 files from source folder to 'CMD' folder
 - create erpfiles.txt to  'CMD' folder
 - optional to copy raw .bdf data to EEG-DATA-COPY foler
@@ -45,7 +45,10 @@ if os is Windows, automatically do the following
 - create subfolders for each subject in 'EEG-ANAL', and import the raw data.
 - create std_artif_S* (artifact detection function) for each subject, then you can modify manually
 - call the std_artif_s* for each subject after your modification
-- save all steps into subfolder 'EEG-ANAL' for each subject 
+- save all steps into subfolder 'EEG-ANAL' for each subject
+- save the RT output files in '.../BEH-ANAL/RT'
+- save the blinister .txt output files in '.../BEH-ANAL/BLO'
+- optional to Common average reference (CAR)
 
 3. simplify the original program in the way that repeatedly used variables in functions are set to be global and only need to modify once.
 4. after each function, a suffix will be added to the saved file names as the following:
