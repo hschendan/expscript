@@ -16,7 +16,7 @@ diary('C:\Users\pzhao\Documents\MATLAB\standard10\diary10.txt'); %***Modify to y
                  %*****************************%
 
 
-clr = 1; % for stage 1;%*** modify to be 0 at stage 2***%, otherwise you have to assign the sfx manually in artif_all.m
+clr = 0; % for stage 1;%*** modify to be 0 at stage 2***%, otherwise you have to assign the sfx manually in artif_all.m
 
 
 if clr

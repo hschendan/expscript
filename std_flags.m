@@ -39,12 +39,12 @@ binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, tr
                  %*****************************%
                         
 os = 1;          %This only need to run once
-paraset = 1;     %This only need to run once
+paraset = 0;     %This only need to run once
 
 % ERPLab Function Flags in sequence
-import = 1;      %This only need run once
-elist = 1;       % EventList
-binlis =  0;     % Binlister
+import = 0;      %This only need run once
+elist = 0;       % EventList
+binlis =  1;     % Binlister
 chanloc = 0;     % Add channel locations
 epoch = 0;       % BinEpoch
 addeye = 0;      % Add eye channels

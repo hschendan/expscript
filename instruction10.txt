@@ -46,7 +46,7 @@ if os is Windows, automatically do the following
 - create std_artif_S* (artifact detection function) for each subject, then you can modify manually
 - call the std_artif_s* for each subject after your modification
 - save all steps into subfolder 'EEG-ANAL' for each subject
-- save the RT output files in '.../BEH-ANAL/RT'
+- save the RT output files (.txt & .xls) in '.../BEH-ANAL/RT'
 - save the blinister .txt output files in '.../BEH-ANAL/BLO'
 - optional to Common average reference (CAR)
 
