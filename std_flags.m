@@ -25,10 +25,9 @@ Linux = 0;
 
 % Global flags determine how script runs
 save_everything  = 0;   % Only used when NOT running modular
-mod = 1;         % Run MODULAR, load and save each step
+mod = 0;         % Run MODULAR, load and save each step
 ch64 = 1;        % 64 channel, else 32 channel
 
-copydata = 0;    % optional to copy the raw data into a folder
 
 lrp = 0;         % not implemented % Use for Lateralized Readiness Potential (LRP)
 binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, transfer to EEG structure checked; otherwise no transfer
@@ -38,20 +37,22 @@ binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, tr
                  %  set 'clr' = 1 in 'MAIN.m'  %
                  %*****************************%
                  
-      %*if not run functions in one go, need to set 'clr' = 0 after the first batch of functions.
+      %*if run the following functions not in one go, need to set 'clr' = 0 after the first batch of functions.
               
                         
-os = 0;          %This only need to run once
-paraset = 0;     %This only need to run once
+os = 1;          %This only need to run once
+paraset = 1;     %This only need to run once
 
 % ERPLab Function Flags in sequence
-import = 0;      %This only need run once
-elist = 0;       % EventList
-binlis =  0;     % Binlister
-chanloc = 0;     % Add channel locations
-epoch = 0;       % BinEpoch
-addeye = 0;      % Add eye channels
-artif = 0;       % Artifact Detection 
+import = 1;      %This only need run once
+copydata = 0;    % optional to copy the raw data into a seperate folder
+
+elist = 1;       % EventList
+binlis =  1;     % Binlister
+chanloc = 1;     % Add channel locations
+epoch = 1;       % BinEpoch
+addeye = 1;      % Add eye channels
+artif = 1;       % Artifact Detection 
 
                  %********************** Stage 2 *********************%
                  %      set clr = 0 in 'MAIN.m';                      %
@@ -61,20 +62,20 @@ artif = 0;       % Artifact Detection
                  %      then run MAIN.m again;                        %
                  %****************************************************%
 
-artif_all = 0;   % after modify for each subjects, run them all
+artif_all = 1;   % after modify for each subjects, run them all
 
-eegrefch = 0;    % Define reference channel for biosemi data, default M12, option CAR
-m12 = 0;         % for average mastoids reference (for EEGs); 
-ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
+eegrefch = 1;    % Define reference channel for biosemi data, default M12, option CAR
+m12 = 1;         % for average mastoids reference (for EEGs); 
+ca = 1;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
-avg = 0;         % NOT implemented separately
+avg = 1;         % NOT implemented separately
 
-erprefch = 0;
-M12 = 0;         % for average mastoids reference (for ERPs);
-CA = 0;          % for common average reference (for ERPs); 
+erprefch = 1;
+M12 = 1;         % for average mastoids reference (for ERPs);
+CA = 1;          % for common average reference (for ERPs); 
 
-meas = 0;        % 
-gavg = 0;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
+meas = 1;        % 
+gavg = 1;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
 
 set = '.set';
 

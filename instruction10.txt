@@ -9,9 +9,9 @@
 
 Please do the following (make your own note if anything is missing here):
 
-1. install EEGLab v13_5_4b (recommed not to save in toolbox, but in 'my documents')
-2. install ERPLab v5.0.0.0 (save in EEGLab 'plugins' folder)
-3. install BIOSIG (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins' folder)
+1. install EEGLab v13_6_5b (recommed not to save in toolbox, but in 'my documents')
+2. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder)
+3. install BIOSIG v3.0.7 (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
 4. have the following 3 files ready in a  folder named '3Files': 
 	- 'bdf.txt', 
 	- 'biosemi64xyz10-20.xyz',  
@@ -36,7 +36,7 @@ it will:
 2. Save Command Window output text to a created file specified by you (see MAIN.m)
 3. According to the flags set by you to run selected functions
 
-if os is Windows, automatically do the following   
+if os is Windows, automatically do the following:   
 - create 7 folders: 'CMD', 'EEG-ANAL', 'Measure', 'Grand', 'BEH-ANAL', 'RT', 'BLO' to the specified path
 - copy 3 files from source folder to 'CMD' folder
 - create erpfiles.txt to  'CMD' folder
@@ -77,3 +77,4 @@ if os is Windows, automatically do the following
 - It will take more than 8 hours to run the whole batch of Color data when error free.
 - if apply the script on other dataset, replace all 'std' by your 'expname', e.g. 'color'
 - original RTlock is removed
+- occasionally 'importing' function is not working properly when reading raw EEG data into .fdt and .set format. The size of the generated file is much smaller than it should be. Then you will get error message when executing 'elist'.
