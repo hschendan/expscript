@@ -16,7 +16,7 @@ diary('C:\Users\pzhao\Documents\MATLAB\standard10\diary10.txt'); %***Modify to y
                  %*****************************%
 
 
-clr = 0; % for stage 1;%*** modify to be 0 at stage 2***%, otherwise you have to assign the sfx manually in artif_all.m
+clr = 1; % for stage 1;%*** modify to be 0 at stage 2***%, otherwise you have to assign the sfx manually in artif_all.m
 
 
 if clr
@@ -26,6 +26,7 @@ end
 global os paraset mod import elist binlis chanloc epoch  addeye artif artif_all eegrefch avg erprefch gavg meas 
 
 %need to run eeglab first
+addpath(genpath('C:\Users\pzhao\Documents\MATLAB\eeglab13_6_5b')) % modify to yours
 eeglab
 
 % Set up Global flags & ERP flags
