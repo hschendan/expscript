@@ -20,7 +20,7 @@ Please do the following (make your own note if anything is missing here):
 5. download and save all the scripts into one folder (e.g. standard10).
 6. have raw EEG data (.bdf) ready somewhere. 
 7. modifications are needed as the following (prefix is omitted here):
-	- in 'MAIN.m' :(1) the dir and (2) the name of 'diary'
+	- in 'MAIN.m' :(1) the dir and (2) the name of 'diary' (3) addpath(genpath()
 	- in 'flags.m':  (1) 'expname'   (2) 'pathname_all' (*very important to keep the last '\') (3) 'pathname_raw'(*very important to keep the last '\')
 	- in 'paraset.m': (1) expression
 	- in 'artif.CreateFiles.m': (1) 'fidIn'
