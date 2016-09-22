@@ -4,7 +4,7 @@
 function std_os
 
 global Windows Linux
-global pathname_all pathname_anal pathname_cmd pathname_gav pathname_meas
+global pathname_all pathname_anal pathname_cmd pathname_gav pathname_meas pathname_beh
 
 if Windows
 
@@ -19,7 +19,15 @@ if Windows
         end
     end
     
-    fprintf('\n+++++++++++++++\n+ Create 4 folders: done! ... \n+++++++++++++++\n\n');
+    if exist(fullfile(pathname_beh, 'BLO/'), 'dir') == 0 
+        mkdir(pathname_beh, 'BLO/'); 
+    end
+            
+    if exist(fullfile(pathname_beh, 'RT/'), 'dir') == 0 
+        mkdir(pathname_beh, 'RT/'); 
+    end
+        
+    fprintf('\n+++++++++++++++\n+ Create folders: done! ... \n+++++++++++++++\n\n');
     
     % Common paths: Should be the same for all Schendan Team Experiments
     
@@ -28,7 +36,7 @@ if Windows
     % %pathname_savg = strcat(pathname_all,'SessionAvg\');
     pathname_gav = strcat(pathname_all, fname{3},'\');
     pathname_meas = strcat(pathname_all,fname{4},'\');
-     
+    pathname_beh = strcat(pathname_all,fname{5},'\'); 
     % WINDOWS END
 
 fprintf('\n+++++++++++++++++++++++\n+ Choose OS & users path: done! ... \n+++++++++++++++++++++++\n\n');     
