@@ -11,20 +11,31 @@ Please do the following (make your own note if anything is missing here):
 
 1. install EEGLab v13.5.4b (recommed not to save in toolbox, but in 'my documents')
 2. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder)
-3. install BIOSIG v3.0.7 (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
+3. install BIOSIG v3.0.3 (or v3.0.7???) (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
 4. have the following 3 files ready in a  folder named '3Files': 
 	- 'bdf.txt', 
 	- 'biosemi64xyz10-20.xyz',  
 	- 'garvparm.txt'
-5. have the file 'biosemi64xyz10-20.xyz' ready
 5. download and save all the scripts into one folder (e.g. standard10).
 6. have raw EEG data (.bdf) ready somewhere. 
-7. modifications are needed as the following (prefix is omitted here):
-	- in 'MAIN.m' :(1) diary (2) addpath(genpath() (optional if you addpath by hand)
-	- in 'flags.m':  (1) 'expname'   (2) 'pathname_all' (*very important to keep the last '\') (3) 'pathname_raw'(*very important to keep the last '\')
-	- in 'paraset.m': (1) expression
-	- in 'artif.CreateFiles.m': (1) 'fidIn'
-8. set up all values in 'flag.m' (please see the instruction in flag.m)
+7. Run Matlab, click the following on the panel:
+	'Set Path'==> 'Add Folder' ==>  'eeglab13_5_4b'
+                  ==> 'Add Folder' ==>  'standard10' (find yours)   
+		  ==> 'save'
+7. modifications are needed in the following functions:
+   	(1) 'MAIN.m' 
+		-- 'diary' 
+		-- 'addpath(genpath()' (optional)
+   	(2) 'flags.m'  
+		-- 'expname'
+		-- 'pathname_all' (*very important to keep the last '\')
+		-- 'pathname_raw'(*very important to keep the last '\')
+  	(3) 'paraset.m': 
+		-- 'expression'
+		-- 'source'
+   	(4) 'artif.CreateFiles.m'
+		-- 'fidIn'
+8. set up all values in 'flag.m'
          
 ------------------------
 * After run std_MAIN.m *
@@ -50,8 +61,8 @@ if os is Windows, automatically do the following:
 - save the blinister .txt output files in '.../BEH-ANAL/BLO'
 - optional to Common average reference (CAR)
 
-3. simplify the original program in the way that repeatedly used variables in functions are set to be global and only need to modify once.
-4. after each function, a suffix will be added to the saved file names as the following:
+4. simplify the original program in the way that repeatedly used variables in functions are set to be global and only need to modify once.
+5. after each function, a suffix will be added to the saved file names as the following:
 	- 'e' for elist
 	- 'b' for blins
 	- 'c' for chanloc
@@ -69,12 +80,25 @@ if os is Windows, automatically do the following:
 	- 'mM' for erprefch, reference to mean of M1 and M2 (mean mastoids); note, aM = mM (never do both)
 	- 'CA`' for common average reference (for ERPs); note, ca = CA, never do both
 
+------------------------
+* Please note *
+------------------------
+1. os.m and paraset.m are MUST-RUN functions to enable complete the preparation work before imports. They are not analysis functions and closely work together.
+	(1) os.m creates all the folders and the common paths.
+	(2) paraset.m create subfolders, copy 3 files to CMD, create erpfiles.txt, create path to subfolders, and create bdf.txt for all subjects.
+	(3) after they run, you can set their flags to 0 and clr to 0, then play other functions’ flags afterwards.
+
+2. Even you have run os.m and paraset.m once:
+	(1) if clr still be 1, after run MAIN.m, it will clear everything saved in the workspace and you will get error message.
+	(2) if set clr = 0, it doesn’t matter flags of os and paraset equals to 0 or 1. When you run MAIN.m, it will run the one with flag =1 and read the saved values from workspace for the one with flag =0 or vice versa.
+
+
 -----------
 *   AoB   *
 -----------
 
-- suffix in epoch.m is changed from 'e' to 'p' due to the same as in 'elist.m'
-- It will take more than 8 hours to run the whole batch of Color data when error free.
-- if apply the script on other dataset, replace all 'std' by your 'expname', e.g. 'color'
-- original RTlock is removed
-- occasionally 'importing' function is not working properly when reading raw EEG data into .fdt and .set format. The size of the generated file is much smaller than it should be. Then you will get error message when executing 'elist'.
+-- suffix in epoch.m is changed from 'e' to 'p' due to the same as in 'elist.m'
+-- It will take more than 8 hours to run the whole batch of Color data when error free.
+-- if apply the script on other dataset, replace all 'std' by your 'expname', e.g. 'color'
+-- original RTlock is removed
+-- occasionally 'importing' function is not working properly when reading raw EEG data into .fdt and .set format. The size of the generated file is much smaller than it should be. You will get error message when executing 'elist'. If this happens, delete the .fdt and .set files of this subject and run the import.m again.
