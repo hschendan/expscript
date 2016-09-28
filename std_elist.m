@@ -3,13 +3,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function std_elist
 
-global nraw data_path subject sfx set
+global nraw data_path subject set
 
 disp('Using ERPLab to Create EEG Eventlist (Basic) in EEGLab file ...')
-
-  x = 'e';
-
-  fprintf('\n+++++++++++++++\n+ (elist) previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
+  
+  sfx = '_'; %initial suffix, please modify it yourself
+  x = 'e';   % please modify it yourself
   
 for s=1:nraw
     clear EEG;  % Clear is to make sure that we start fresh for each subject with the EEG structures
@@ -41,11 +40,6 @@ for s=1:nraw
         fprintf('\n *** Skip all processing for this subject *** \n\n');
     end
 end
-
-sfx = [sfx x];
-
-
-fprintf('\n+++++++++++++++\n+ (elist) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
 fprintf('\n++++++++++++++++++++++++++++++\n+ Import event info (Basic) into ERPLab from EEGLab: done! ... \n++++++++++++++++++++++++++++++\n\n');
 

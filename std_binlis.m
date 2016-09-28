@@ -7,12 +7,11 @@
 function std_binlis
 
 global nraw data_path subject pathname_cmd pathname_beh binlisb bdf
-global sfx set
+global set
 disp('binlister working ...')
 
-x = 'b';
-
-  fprintf('\n+++++++++++++++\n+ (binlis) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
+sfx = '_e'; %initial suffix, please modify it yourself
+x = 'b';   % please modify it yourself
   
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];       
@@ -45,11 +44,6 @@ for s=1:nraw
         fprintf('\n *** WARNING: %s does not exist *** \n\n', sname);
     end
 end
-
-sfx = [sfx x];
-
-
-fprintf('\n+++++++++++++++\n+ (binlis) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
 fprintf('\n+++++++++++++++\n+ binlister: done! ... \n+++++++++++++++\n\n');
 

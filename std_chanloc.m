@@ -3,13 +3,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 function std_chanloc
 
-global nraw data_path subject ch64 pathname_cmd file1 sfx set
+global nraw data_path subject ch64 pathname_cmd file1 set
 
 disp('Adding channel locations: WORKING ...')
 
-x = 'c';
- 
-fprintf('\n+++++++++++++++\n+ (chanloc) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
+sfx = '_eb'; %initial suffix, please modify it yourself
+x = 'c'; % please modify it yourself
 
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];        
@@ -36,10 +35,6 @@ for s=1:nraw
         fprintf('\n *** WARNING: %s does not exist *** \n\n', sname);
     end
 end
-
-sfx = [sfx x];
-
-fprintf('\n+++++++++++++++\n+ (chanloc) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
 fprintf('\n+++++++++++++++\n+ Add Channel Locations: done! ... \n+++++++++++++++\n\n');
 

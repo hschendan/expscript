@@ -6,11 +6,11 @@
 
 function  std_avg
 
-global nraw data_path subject sfx set
+global nraw data_path subject set
    
 disp('ERP Averaging: Working ...')
 
-fprintf('\n+++++++++++++++\n+ (avg) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
+sfx = '_ebcpyaaM'; %or '_ebcpyaca';  %initialise sfx, please modify it yourself
 
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];      
@@ -49,11 +49,8 @@ for s=1:nraw
         fprintf('\n *** WARNING: %s does not exist *** \n\n', sname);
     end
     
-   
 end
  
- fprintf('\n+++++++++++++++\n+ (avg) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
-
  fprintf('\n+++++++++++++++\n+ ERP Averaging: done! ... \n+++++++++++++++\n\n');
    
  

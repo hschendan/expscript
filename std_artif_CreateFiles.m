@@ -1,13 +1,11 @@
 function std_artif_CreateFiles
 
-global nraw subject sfx
+global nraw subject
 
 disp('Creating arti detection files for each subject...')
 
-fprintf('\n+++++++++++++++\n+ Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
-
 % open template file for artifact detection
-fidIn = fopen('C:\Users\pzhao\Documents\MATLAB\standard10\std_artif_T.m');
+fidIn = fopen('C:\Users\pzhao\Documents\MATLAB\standard11\std_artif_T.m');
 
 % read in file
 tline = fgets(fidIn);

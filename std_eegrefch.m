@@ -1,13 +1,17 @@
 function std_eegrefch
 
-global m12 nraw data_path subject ch64 sfx set ca 
+global m12 nraw data_path subject ch64 set ca 
+
+sfx = '_ebcpya';   %initialise sfx, please modify it yourself
 
 disp('EEG Reference: WORKING ...')
 
-fprintf('\n+++++++++++++++\n+ (eegrefch) previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference to average of M1 and M2 (average mastoids) for EEG % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-if m12           % Reference to average of M1 and M2 (average mastoids) for EEG % 
-    x = 'aM';
+if m12             
+    x = 'aM';   
     for s=1:nraw
         sname = [data_path{s} subject{s} sfx set];        
         if exist(sname, 'file')>0
@@ -24,13 +28,16 @@ if m12           % Reference to average of M1 and M2 (average mastoids) for EEG 
             fprintf('\n *** WARNING: %s does not exist *** \n\n', sname);
         end
     end
-    sfx = [sfx x];
-    fprintf('\n+++++++++++++++\n+ (eegrefch) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
+    
     fprintf('\n+++++++++++++++\n+ Re-Referenced to M1&M2 for EEG: done! ... \n+++++++++++++++\n\n');
 end
 
-if ca            % Reference to common average for EEG %
-    x = 'ca';
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference to common average for EEG %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+if ca           
+    x = 'ca';  
     for s=1:nraw
         sname = [data_path{s} subject{s} sfx set];        
         if exist(sname, 'file')>0
@@ -44,8 +51,7 @@ if ca            % Reference to common average for EEG %
         fprintf('\n *** WARNING: %s does not exist *** \n\n', sname);
         end
     end
-    sfx = [sfx x];
-    fprintf('\n+++++++++++++++\n+ (eegrefch) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
+   
     fprintf('\n+++++++++++++++\n+ Re-Referenced to common average for EEG: done! ... \n+++++++++++++++\n\n');
     
 end 

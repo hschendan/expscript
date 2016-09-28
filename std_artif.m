@@ -5,12 +5,9 @@
 
 function  std_artif 
 
-global nraw subject sfx
+global nraw subject
 
 disp('Artifact detection: starting ...')
-
-fprintf('\n+++++++++++++++\n+ (artif) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
-
 
 for s=1:nraw
 

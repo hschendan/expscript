@@ -6,13 +6,12 @@
 
 function std_epoch
 
-global nraw data_path subject sfx set
+global nraw data_path subject set
 
 disp('Create Bin based Epoch: WORKING ...')
-    
-x = 'p';
 
-fprintf('\n+++++++++++++++\n+ (epoch) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
+sfx = '_ebc';   %initialise sfx, please modify it yourself
+x = 'p';
 
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];        
@@ -31,11 +30,6 @@ for s=1:nraw
     end
     
 end
-
-sfx = [sfx x];
-
-
-fprintf('\n+++++++++++++++\n+ (epoch) New sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
 fprintf('\n+++++++++++++++\n+ Create Bin based Epoch: done! ... \n+++++++++++++++\n\n');
 

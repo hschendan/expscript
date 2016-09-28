@@ -7,11 +7,11 @@ function std_flags
 
 global expname pathname_all pathname_raw Windows Linux 
 global save_everything mod ch64 copydata ca m12 CA M12 lrp binlisb
-global os paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all avg erprefch gavg meas
+global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all avg erprefch gavg meas
 global allbins file1 file2 file3 set 
                       
-expname = 'std10'; % Modify for your experiment: Your experiment name here, e.g., color, vishape, untask
-pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard10\'; %% Modify for your experiment: where parent folder is 
+expname = 'std11'; % Modify for your experiment: Your experiment name here, e.g., color, vishape, untask
+pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard11\'; %% Modify for your experiment: where parent folder is 
 pathname_raw = 'C:\Users\pzhao\Documents\MATLAB\ColorRawData\'; % where raw bdf is
 
 allbins = 174;  %Modify for your experiment: total # bins in bin descriptor file (bdf.txt command file). Default for color expt = 174
@@ -39,20 +39,18 @@ binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, tr
                  
       %*if run the following functions not in one go, need to set 'clr' = 0 after the first batch of functions.
               
-                        
-os = 1;          %This only need to run once
-paraset = 1;     %This only need to run once
-
-% ERPLab Function Flags in sequence
-import = 1;      %This only need run once
+% Preparation stage                        
+os_paraset = 0;  %This only need to run once
+import = 0;      %This only need run once
 copydata = 0;    % optional to copy the raw data into a seperate folder
 
+% ERPLab Function Flags in sequence
 elist = 1;       % EventList
-binlis =  1;     % Binlister
+binlis = 1;     % Binlister
 chanloc = 1;     % Add channel locations
-epoch = 1;       % BinEpoch
-addeye = 1;      % Add eye channels
-artif = 1;       % Artifact Detection 
+epoch = 0;       % BinEpoch
+addeye = 0;      % Add eye channels
+artif = 0;       % Artifact Detection 
 
                  %********************** Stage 2 *********************%
                  %      set clr = 0 in 'MAIN.m';                      %
@@ -62,20 +60,20 @@ artif = 1;       % Artifact Detection
                  %      then run MAIN.m again;                        %
                  %****************************************************%
 
-artif_all = 1;   % after modify for each subjects, run them all
+artif_all = 0;   % after modify for each subjects, run them all
 
-eegrefch = 1;    % Define reference channel for biosemi data, default M12, option CAR
-m12 = 1;         % for average mastoids reference (for EEGs); 
-ca = 1;          % common average reference, in addition to standard mastoid reference (for EEGs); 
+eegrefch = 0;    % Define reference channel for biosemi data, default M12, option CAR
+m12 = 0;         % for average mastoids reference (for EEGs); 
+ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
-avg = 1;         % NOT implemented separately
+avg = 0;         % NOT implemented separately
 
-erprefch = 1;
-M12 = 1;         % for average mastoids reference (for ERPs);
-CA = 1;          % for common average reference (for ERPs); 
+erprefch = 0;
+M12 = 0;         % for average mastoids reference (for ERPs);
+CA = 0;          % for common average reference (for ERPs); 
 
-meas = 1;        % 
-gavg = 1;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
+meas = 0;        % 
+gavg = 0;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
 
 set = '.set';
 

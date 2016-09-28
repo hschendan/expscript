@@ -4,11 +4,7 @@ function std_artif_all
 
 disp('After modify arti for each subject, now running artifact rejection for all subjects ...')
 
-global nraw subject sfx x
-
-fprintf('\n+++++++++++++++\n+ (artif_all) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
-
-x = 'a';
+global nraw subject
 
 for s=1:nraw
         fprintf('\n++++\n+ Begin artifact rejection for %s ... \n++++\n\n', subject{s}); 
@@ -17,7 +13,3 @@ for s=1:nraw
         fd = str2func(f);
         fd(s);
 end
-
-sfx = [sfx x];
-
-fprintf('\n+++++++++++++++\n+ (artif_all) New sfx = %s ... \n+++++++++++++++\n\n', sfx);

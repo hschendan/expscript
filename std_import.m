@@ -4,11 +4,11 @@
 
 function std_import 
 
-global copydata pathname_all nraw subject pathname_raw rawdata data_path sfx set
+global copydata pathname_all nraw subject pathname_raw rawdata data_path set
 	
 disp('Importing biosemi data.bdf into EEGLab and saving as EEGLab sets ...')  
 
-sfx = '_'; %initial suffix
+sfx = '_';
 
 if copydata  % it is optional to copy data to a folder%
     
@@ -42,8 +42,6 @@ for s=1:nraw
         fprintf('\n+++++++++++++++\n+ Processed data %s already exist! \n+++++++++++++++\n\n', [subject{s} sfx set]);
     end 
 end
-
-fprintf('\n+++++++++++++++\n+ (import) initial sfx = %s ... \n+++++++++++++++\n\n', sfx);
 
 fprintf('\n+++++++++++++++\n+ Import: done! ... \n+++++++++++++++\n\n');
     

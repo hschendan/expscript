@@ -4,14 +4,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function std_addeye
 
-global nraw data_path subject ch64 sfx set
+global nraw data_path subject ch64 set
 
 disp('Add eye channels ...')
 
-fprintf('\n+++++++++++++++\n+ (addeye) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
-
-
-x = 'y';
+sfx = '_ebcp'; %intialise sfx, please modify it yourself
+x = 'y';   %please modify it yourself
 
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];        
@@ -34,8 +32,5 @@ for s=1:nraw
     end    
     
 end
-
-sfx = [sfx x];
-fprintf('\n+++++++++++++++\n+ Added eye channels: done! ... \n+++++++++++++++\n\n');
 
 fprintf('\n+++++++++++++++\n+ (addeye)New sfx = %s ... \n+++++++++++++++\n\n', sfx);

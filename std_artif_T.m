@@ -1,7 +1,8 @@
 function std_artif_T(s)
   
-global data_path subject ch64 artparm sfx set
+global data_path subject ch64 artparm set
 
+sfx = '_ebcpy'; % initialise sfx, please modify it yourself
 x = 'a';
 
 fprintf('\n+++++++++++++++\n+ (artif_T) Previous sfx = %s ... \n+++++++++++++++\n\n', sfx);
