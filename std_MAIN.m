@@ -5,7 +5,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Stream order: eeglab -> flags -> os -> paraset -> mod -> import ->
-% -> elist -> binlis ->chanloc -> epoch -> addeye -> artif -> eegrefch(opt.)-> avg -> erprefch -> meas -> gavg(with lp)
+% -> elist -> binlis ->chanloc -> epoch -> addeye -> artif -> eegrefch(optional: For EEGLab processing only)-> avg -> erprefch -> meas -> gavg(with lp)
+% Optional stream order: Filter (all steps but add filter before meas), CAR (all steps but also reref to CAR in addition to M12), eegrefch (for EEGLab processing only),
 % Fixed order: elist -> binlis; commands after this until avg step can change order by moving commands below into new order; commands from avg onwards fixed order
 % Save Command Window output text to a created file 
 
@@ -86,7 +87,7 @@ if artif_all
     std_artif_all
 end
 
-%Reference to mean of bilateral mastoids & CAR
+% Optional: For EEGLab processing only; NOT part of standard ERP processing. NOTE: NEVER RE-REFERENCE TWICE.
 if eegrefch
    std_eegrefch 
 end
@@ -96,7 +97,7 @@ if avg
     std_avg 
 end
 
-%ERPrefch
+%ERPrefch: NOTE: NEVER RE-REFERENCE TWICE.
 if erprefch
     std_erprefch
 end
