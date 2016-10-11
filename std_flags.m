@@ -40,17 +40,17 @@ binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, tr
       %*if run the following functions not in one go, need to set 'clr' = 0 after the first batch of functions.
               
 % Preparation stage                        
-os_paraset = 0;  %This only need to run once
-import = 0;      %This only need run once
-copydata = 0;    % optional to copy the raw data into a seperate folder
+os_paraset = 1;  %This only need to run once
+import = 1;      %This only need run once
+copydata = 0;    % % Default flag is 0. optional to copy the raw data into a seperate folder
 
 % ERPLab Function Flags in sequence
 elist = 1;       % EventList
 binlis = 1;     % Binlister
 chanloc = 1;     % Add channel locations
-epoch = 0;       % BinEpoch
-addeye = 0;      % Add eye channels
-artif = 0;       % Artifact Detection 
+epoch = 1;       % BinEpoch
+addeye = 1;      % Add eye channels
+artif = 1;       % Artifact Detection for each subject: GARV = Get Artifact Rejection Values. 
 
                  %********************** Stage 2 *********************%
                  %      set clr = 0 in 'MAIN.m';                      %
@@ -60,20 +60,22 @@ artif = 0;       % Artifact Detection
                  %      then run MAIN.m again;                        %
                  %****************************************************%
 
-artif_all = 0;   % after modify for each subjects, run them all
+artif_all = 1;   % after modify artif.m for each subject, mark artifacts for all subjects and create 3 ERP averages (ar, all, bad)
 
-eegrefch = 0;    % Define reference channel for biosemi data, default M12, option CAR
-m12 = 0;         % for average mastoids reference (for EEGs); 
+% Default flag must be 0 for eegrefch in standard processing order. 
+eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
+m12 = 0;         % for average mastoids reference (for EEGs); Default
 ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
-avg = 0;         % NOT implemented separately
+avg = 0;         % Default flag must be 0; NOT implemented separately; done in artif_all
 
-erprefch = 0;
-M12 = 0;         % for average mastoids reference (for ERPs);
+% Default flag must be 1 for erpreref in standard processing order. 
+erprefch = 1;    % default M12, option CAR.
+M12 = 1;         % for average mastoids reference (for ERPs); Default
 CA = 0;          % for common average reference (for ERPs); 
 
-meas = 0;        % 
-gavg = 0;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
+meas = 1;        % 
+gavg = 1;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
 
 set = '.set';
 
