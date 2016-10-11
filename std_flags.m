@@ -15,7 +15,7 @@ pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard11\'; %% Modify for your
 pathname_raw = 'C:\Users\pzhao\Documents\MATLAB\ColorRawData\'; % where raw bdf is
 
 allbins = 174;  %Modify for your experiment: total # bins in bin descriptor file (bdf.txt command file). Default for color expt = 174
-file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: Choose64 or 32 channel location file
+file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: Choose 64 or 32 channel location file
 file2 = 'garvparm.txt'; % Modify for your experiment 
 file3 = 'erpfiles.txt'; % Modify for your experiment: subject .erp files for grand average gavg
 
