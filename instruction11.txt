@@ -29,6 +29,10 @@ Please do the following (make your own note if anything is missing here):
 		-- 'expname'
 		-- 'pathname_all' (*very important to keep the last '\')
 		-- 'pathname_raw'(*very important to keep the last '\')
+		-- allbins = 174;  % Modify for your experiment: total # bins in bin descriptor file (bdf.txt command file).  
+		-- file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: 64 or 32 channel location file
+		-- file2 = 'garvparm.txt'; Modify for your experiment, default parameters for garv [soon to be obsolete]
+		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg
   	(3) 'os_paraset.m': 
 		-- 'expression'
 		-- 'source'
