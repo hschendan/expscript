@@ -15,18 +15,18 @@ pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard11\'; %% Modify for your
 pathname_raw = 'C:\Users\pzhao\Documents\MATLAB\ColorRawData\'; % where raw bdf is
 
 allbins = 174;  %Modify for your experiment: total # bins in bin descriptor file (bdf.txt command file). Default for color expt = 174
-file1 = 'biosemi64xyz10-20.xyz';
-file2 = 'garvparm.txt';
-file3 = 'erpfiles.txt';
+file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: Choose64 or 32 channel location file
+file2 = 'garvparm.txt'; % Modify for your experiment 
+file3 = 'erpfiles.txt'; % Modify for your experiment: subject .erp files for grand average gavg
 
 %Flags for choosing operating systems
 Windows = 1; 
 Linux = 0;
 
 % Global flags determine how script runs
-save_everything  = 0;   % Only used when NOT running modular
-mod = 0;         % Run MODULAR, load and save each step
-ch64 = 1;        % 64 channel, else 32 channel
+save_everything  = 0;   % Only used when NOT running modular; NOT IMPLEMENTED
+mod = 0;         % Run MODULAR, load and save each step; NOT IMPLEMENTED
+ch64 = 1;        % 64 channel, else 32 channel; NOT IMPLEMENTED
 
 
 lrp = 0;         % not implemented % Use for Lateralized Readiness Potential (LRP)
