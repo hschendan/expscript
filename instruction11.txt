@@ -99,3 +99,35 @@ if os is Windows, automatically do the following:
 -- if apply the script on other dataset, replace all 'std' by your 'expname', e.g. 'color'
 -- original RTlock is removed
 -- occasionally 'importing' function is not working properly when reading raw EEG data into .fdt and .set format. The size of the generated file is much smaller than it should be. You will get error message when executing 'elist'. If this happens, delete the .fdt and .set files of this subject and run the import.m again.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+*	ORDER OF STEPS TO RUN SCRIPT	*
+Standard processing stream order: Use this order in MAIN, otherwise script will not yield correct output files. Script is programmed to run modular so that only the remaining steps to do can be run from any point (e.g., you ran import and event list, and now you run binlister onwards; you ran everything but want to use a different epoch so run from epoch onwards again).
+
+EEG: These steps must be run on the EEG data in this order.
+1. Import
+2. Event list
+3. Binlister
+4. Chanloc
+5. Epoch
+6. Addeye
+7. artif each (Garv: set artefact rejection value parameters in the artif.m file for each subject)
+8. Artif all (marks EEG with artifacts using garv parameters from artif step)
+9. Avg
+
+ERP: These operate on .erp average files (not raw EEG)
+erpreref (Rereference ERP)
+Measure
+Grand average 
+
+
+OPTIONS:
+
+FILTER:
+ERP: These operate on .erp average files (not raw EEG)
+Filter (before Measure)
+
+
+RE-REFERENCE THE EEG DATA:
+eegreref after Artif all (marks EEG with artifacts using garv parameters from artif step). If artefact detection, ICA artefact detection or EEG frequency analysis in eeglab, then reference eegreref after Artif_all.
