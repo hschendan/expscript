@@ -1,6 +1,6 @@
 				***************************
 				*		          *	
-				*   Instruction v.10      *
+				*   Instruction v.11      *
 				*			  *
 				***************************
 ---------------------------
@@ -34,7 +34,7 @@ Please do the following (make your own note if anything is missing here):
 		-- file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: 64 or 32 channel location file
 		-- file2 = 'garvparm.txt'; Modify for your experiment, default parameters for garv [soon to be obsolete]
 		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg
-  	(3) 'os.m' and 'paraset.m': 
+  	(3) 'os_paraset.m' (old versions: and/or 'paraset.m'): 
 		-- 'expression'
 		-- 'source'
    	(4) 'artif.CreateFiles.m'
@@ -44,7 +44,13 @@ Please do the following (make your own note if anything is missing here):
 		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for output file name
 
 8. set up all values in 'flag.m'
-         
+
+------------------------
+* Run std_MAIN.m *
+------------------------
+
+In matlab command window, type: std_MAIN <enter>
+
 ------------------------
 * After run std_MAIN.m *
 ------------------------
