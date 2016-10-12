@@ -18,13 +18,14 @@ Please do the following (make your own note if anything is missing here):
 	- 'garvparm.txt'
 5. download and save all the scripts into one folder (e.g. standard10).
 6. have raw EEG data (.bdf) ready somewhere. 
-7. Run Matlab, click the following on the panel:
-	'Set Path'==> 'Add Folder' ==>  'eeglab13_5_4b'
+7. Run Matlab. If first time running eeglab, Browse to and select eeglab directory (e.g., Documents/MATLAB/eeglab13_5_4b), type eeglab in Matlab command window, which will set paths. To save paths, click the following on the panel:
+	'Set Path'==> 'Add Folder' ==>  'eeglab13_5_4b' (if eeglab not showing in path)
                   ==> 'Add Folder' ==>  'standard10' (find yours)   
 		  ==> 'save'
 7. modifications are needed in the following functions:
    	(1) 'MAIN.m' 
 		-- 'diary' 
+		-- Optional: Change order of steps by changing order of module calls 
    	(2) 'flags.m'  
 		-- 'expname'
 		-- 'pathname_all' (*very important to keep the last '\')
@@ -33,13 +34,14 @@ Please do the following (make your own note if anything is missing here):
 		-- file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: 64 or 32 channel location file
 		-- file2 = 'garvparm.txt'; Modify for your experiment, default parameters for garv [soon to be obsolete]
 		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg
-  	(3) 'os_paraset.m': 
+  	(3) 'os.m' and 'paraset.m': 
 		-- 'expression'
 		-- 'source'
    	(4) 'artif.CreateFiles.m'
 		-- 'fidIn'
-        (5) 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
-                -- 'sfx'
+        (5) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
+                -- 'sfx' %initial suffix (from previous steps already run, e.g., sfx = '_e' means import and elist done; for				input file name)
+		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for output file name
 
 8. set up all values in 'flag.m'
          
@@ -68,7 +70,7 @@ if os is Windows, automatically do the following:
 - optional to Common average reference (CAR)
 
 4. simplify the original program in the way that repeatedly used variables in functions are set to be global and only need to modify once.
-5. after each function, a suffix will be added to the saved file names as the following:
+5. after each function, a suffix (sfx) will be added to the saved file names as the following:
 	- 'e' for elist
 	- 'b' for blins
 	- 'c' for chanloc
@@ -126,12 +128,14 @@ Measure
 Grand average 
 
 
-OPTIONS:
+OPTIONS: 
 
+RE-REFERENCE THE EEG DATA:
+eegreref after Artif all (marks EEG with artifacts using garv parameters from artif step). If artefact detection, ICA artefact detection or EEG frequency analysis in eeglab, then reference eegreref after Artif_all.
+
+* NOT IMPLEMENTED *
 FILTER:
 ERP: These operate on .erp average files (not raw EEG)
 Filter (before Measure)
 
 
-RE-REFERENCE THE EEG DATA:
-eegreref after Artif all (marks EEG with artifacts using garv parameters from artif step). If artefact detection, ICA artefact detection or EEG frequency analysis in eeglab, then reference eegreref after Artif_all.
