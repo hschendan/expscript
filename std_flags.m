@@ -63,11 +63,11 @@ artif = 1;       % Artifact Detection for each subject: GARV = Get Artifact Reje
 artif_all = 1;   % after modify artif.m for each subject, mark artifacts for all subjects and create 3 ERP averages (ar, all, bad)
 
 % Default flag must be 0 for eegrefch in standard processing order. 
-eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
+eegrefch = 0;    % Default flag = 0; Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
 m12 = 0;         % for average mastoids reference (for EEGs); Default
 ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
-avg = 0;         % Default flag must be 0; NOT implemented separately; done in artif_all
+avg = 1;         % Default flag must be 1 at second stage; NOTE: should be done also in artif to assess ERPs
 
 % Default flag must be 1 for erpreref in standard processing order. 
 erprefch = 1;    % default M12, option CAR.
