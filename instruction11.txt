@@ -126,7 +126,7 @@ EEG: These steps must be run on the EEG data in this order.
 6. Addeye
 7. artif each (Garv: set artefact rejection value parameters in the artif.m file for each subject)
 8. Artif all (marks EEG with artifacts using garv parameters from artif step)
-9. Avg
+9. Avg (input is *ar.set and output is .erp average file)
 
 ERP: These operate on .erp average files (not raw EEG)
 erpreref (Rereference ERP)
@@ -136,8 +136,8 @@ Grand average
 
 OPTIONS: 
 
-RE-REFERENCE THE EEG DATA:
-eegreref after Artif all (marks EEG with artifacts using garv parameters from artif step). If artefact detection, ICA artefact detection or EEG frequency analysis in eeglab, then reference eegreref after Artif_all.
+RE-REFERENCE EEG DATA (*.set):
+eegreref (after Artif all (marks EEG with artifacts using garv parameters from artif step). If artefact detection, ICA artefact detection or EEG frequency analysis in eeglab, then reference eegreref after Artif_all, but then do NOT rereference again using erpreref.)
 
 * NOT IMPLEMENTED *
 FILTER:
