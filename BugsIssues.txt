@@ -1,0 +1,44 @@
+Bugs and Issues
+
+20160824
+Instruction9.txt
+7.
+Std_paraset.m
+Rawdata needs to be modified to list raw bdf files for your experiment.
+FIXED: Added comment to remind experimenter to add their raw data files.
+
+
+Flags.m
+allbins = 174; 
+This needs to change for each experiment bin descriptor file (bdf command file).
+FIXED: Added comment to remind experimenter to do this
+
+CAR= 0; unless you want to do CAR
+FIXED: Added comment 
+
+8.
+-stage 1
+Cannot find ‘clr’ in flags or paraset
+
+Flags.m
+Delete:
+%pathname_write = ??
+%impexpsubject20 = ??
+FIXED:  deleted
+
+
+binlisb = 0;     % default is 1; binlister option: Use bin # to label epochs, transfer to EEG structure checked
+
+***** OK for now, but at some point: We need to determine if we want to: transfer to EEG structure
+
+
+ERRORS:
+I think the error is due to running the script twice. But why did this error not occur for S01?
++++++++++++++++
++ std_artif_S02 already exist! 
++++++++++++++++
+
+
++++++++++++++++
++ std_artif_S03 already exist! 
++++++++++++++++
