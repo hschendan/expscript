@@ -118,14 +118,17 @@ if os is Windows, automatically do the following:
 Standard processing stream order: Use this order in MAIN, otherwise script will not yield correct output files. Script is programmed to run modular so that only the remaining steps to do can be run from any point (e.g., you ran import and event list, and now you run binlister onwards; you ran everything but want to use a different epoch so run from epoch onwards again).
 
 EEG: These steps must be run on the EEG data in this order.
-1. Import
-2. Event list
-3. Binlister
-4. Chanloc
-5. Epoch
-6. Addeye
-7. artif each (Garv: set artefact rejection value parameters in the artif.m file for each subject)
-8. Artif all (marks EEG with artifacts using garv parameters from artif step)
+1. Import	import.m					output suffix:	sfx = '_' (analogous to x in later steps)
+2. Event list	elist.m		input suffix: 	sfx = '_'	output suffix:	x = 'e'
+3. Binlister	binlis.m	input suffix: 	sfx = '_e'	output suffix:	x = 'b'
+4. Chanloc	chanloc.m	input suffix: 	sfx = '_eb'	output suffix:	x = 'c'
+5. Epoch	epoch.m		input suffix: 	sfx = '_ebc'	output suffix:	x = 'p'
+6. Addeye	addeye.m	input suffix: 	sfx = '_ebcp'	output suffix:	x = 'y'
+7. Create artif	artif.m	Create std_artif_T.m, where T = subject number, for each subject.
+END STAGE 1 SCRIPT
+8. Run std_artif_T.m, where T = subject number, for each subject (GARV: get artefact rejection value parameters and enter in the std_artif_T.m file for each subject). NOTE: Currently std_artif_T.m marks EEG with artifacts using garv parameters from artif step so if this is already run for each subject separately, then skip artif_all.m
+START STAGE 2 SCRIPT
+8. Artif all (Optional: only need to run if you need to mark EEG artifacts for all subjects. Marks EEG with artifacts using garv parameters from artif step. OK to run twice (first for std_artif_T.m and second here) so default flag = 1)
 9. Avg (input is *ar.set and output is .erp average file)
 
 ERP: These operate on .erp average files (not raw EEG)
