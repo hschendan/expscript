@@ -10,7 +10,8 @@ global nraw data_path subject set
    
 disp('ERP Averaging: Working ...')
 
-sfx = '_ebcpyaaM'; %or '_ebcpyaca';  %initialise sfx, please modify it yourself
+sfx = '_ebcpya'; %initialise sfx, please modify it yourself
+% Default eeg not re-referenced: ; if eeg is re-referenced then '_ebcpyaaM' or '_ebcpyaca';  
 
 for s=1:nraw
     sname = [data_path{s} subject{s} sfx set];      
