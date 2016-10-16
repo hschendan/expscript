@@ -9,20 +9,21 @@
 
 Please do the following (make your own note if anything is missing here):
 
-1. install EEGLab v13.5.4b (recommed not to save in toolbox, but in 'my documents')
-2. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder)
-3. install BIOSIG v3.0.3 (or v3.0.7???) (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
-4. have the following 3 files ready in a  folder named '3Files': 
+1. install MATLAB2015a
+2. install EEGLab v13.5.4b (recommed not to save in toolbox, but in 'my documents')
+3. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder)
+4. install BIOSIG v3.0.3 (or v3.0.7???) (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
+5. have the following 3 files ready in a  folder named '3Files': 
 	- 'bdf.txt', 
 	- 'biosemi64xyz10-20.xyz',  
 	- 'garvparm.txt'
-5. download and save all the scripts into one folder (e.g. standard10).
-6. have raw EEG data (.bdf) ready somewhere. 
-7. Run Matlab. If first time running eeglab, Browse to and select eeglab directory (e.g., Documents/MATLAB/eeglab13_5_4b), type eeglab in Matlab command window, which will set paths. To save paths, click the following on the panel:
+6. download and save all the scripts into one folder (e.g. standard10).
+7. have raw EEG data (.bdf) ready somewhere. 
+8. Run Matlab. If first time running eeglab, Browse to and select eeglab directory (e.g., Documents/MATLAB/eeglab13_5_4b), type eeglab in Matlab command window, which will set paths. To save paths, click the following on the panel:
 	'Set Path'==> 'Add Folder' ==>  'eeglab13_5_4b' (if eeglab not showing in path)
                   ==> 'Add Folder' ==>  'standard10' (find yours)   
 		  ==> 'save'
-7. modifications are needed in the following functions:
+9. modifications are needed in the following functions:
    	(1) 'MAIN.m' 
 		-- 'diary' 
 		-- Optional: Change order of steps by changing order of module calls 
@@ -37,11 +38,14 @@ Please do the following (make your own note if anything is missing here):
   	(3) 'os_paraset.m' (old versions: and/or 'paraset.m'): 
 		-- 'expression'
 		-- 'source'
-   	(4) 'artif.CreateFiles.m'
+   	(4) 'artif_CreateFiles.m'
 		-- 'fidIn'
-        (5) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
+	(5) 'artif_one.m'
+		-- 'n' (the subject number you want to run for artifact detection)
+        (6) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
                 -- 'sfx' %initial suffix (from previous steps already run, e.g., sfx = '_e' means import and elist done; for				input file name)
-		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for output file name
+		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for 
+output file name
 
 8. set up all values in 'flag.m'
 
@@ -74,6 +78,8 @@ if os is Windows, automatically do the following:
 - save the RT output files (.txt & .xls) in '.../BEH-ANAL/RT'
 - save the blinister .txt output files in '.../BEH-ANAL/BLO'
 - optional to Common average reference (CAR)
+- optional to do std_artif_all, i.e. run all the artif_artif_S** in one go.
+- std_artif_one will allow you to change the value 'n' to run the single subject at a time.
 
 4. simplify the original program in the way that repeatedly used variables in functions are set to be global and only need to modify once.
 5. after each function, a suffix (sfx) will be added to the saved file names as the following:
