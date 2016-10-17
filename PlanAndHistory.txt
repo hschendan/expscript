@@ -3,11 +3,7 @@ Plan And History
 expscript
 
 TO DO (in order of priority):
-* Change the RT output function to create xls files in addition to .txt files. 
-* Put the RT output files in a single directory: BEH-ANAL/RT. 
-* Put the binlister txt output in directory: BLOUT. Put all other text files or other non-EEG/ERP output files in a directory: ANAL-OUT.
-* Read list of raw files from raw file directory.
-* Create Erpfiles.txt at averaging stage. Erpfiles.txt should be generated automatically by the script at the measure stage, since the script creates these input files.
+* add after gavg: filter (input is M12.erp from erpreref step; output x=f, and filter version of erpfiles.txt: erpfilesf.txt), meas (input is _M12f.erp), gavg (input files are _M12f.erp: same as for meas of filter .erp step)
 * Channel interpolation option before reref (will need to run script first for garv then 2nd time for interpolation/NaNs from interpolation onwards): (a) none (default), (b) interpolation spherical spline, (c) NaNs and use matlab nanmean function during group-level analyses or similar EEGLab/ERPLab solution.
 * Run using Parameter file with options for flags, function parameters: flags, # chans, CAR, exp name, raw file list, windows/linux, RTlock, lrp.
 * 32 channel option
@@ -24,3 +20,9 @@ TO DO (in order of priority):
 * ANOVA after ERP measure http://www.mathworks.com/help/stats/analysis-of-variance-anova-1.html?s_tid=gn_loc_drop
 * User friendly
 
+DONE
+* Change the RT output function to create xls files in addition to .txt files. 
+* Put the RT output files in a single directory: BEH-ANAL/RT. 
+* Put the binlister txt output in directory: BLOUT. Put all other text files or other non-EEG/ERP output files in a directory: ANAL-OUT.
+* Read list of raw files from raw file directory.
+* Create Erpfiles.txt at averaging stage. Erpfiles.txt should be generated automatically by the script at the measure stage, since the script creates these input files.
