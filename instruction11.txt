@@ -34,7 +34,7 @@ Please do the following (make your own note if anything is missing here):
 		-- allbins = 174;  % Modify for your experiment: total # bins in bin descriptor file (bdf.txt command file).  
 		-- file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: 64 or 32 channel location file
 		-- file2 = 'garvparm.txt'; Modify for your experiment, default parameters for garv [soon to be obsolete]
-		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg
+		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg and to measure meas
   	(3) 'os_paraset.m' (old versions: and/or 'paraset.m'): 
 		-- 'expression'
 		-- 'source'
@@ -45,6 +45,7 @@ Please do the following (make your own note if anything is missing here):
         (6) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
                 -- 'sfx' %initial suffix (from previous steps already run, e.g., sfx = '_e' means import and elist done; for				input file name)
 		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for 
+ 
 output file name
 
 8. set up all values in 'flag.m'
@@ -105,6 +106,8 @@ if os is Windows, automatically do the following:
 ------------------------
 1. need to run 'os_paraset.m'once before import.
 2. need to run 'import.m' once.
+3. erpfiles.txt .erp filename list; default is armM (artifacts rejected referenced to M12) for meas and gavg; copy when created and save elsewhere so not overwritten; need to modify if input is filtered or CAR for meas or gavg
+4. erprefch.m uses ERPref64M12.txt default is 64 cap ch referenced to mean mastoids M12; re-reference command file
 
 
 -----------
@@ -139,8 +142,8 @@ START STAGE 2 SCRIPT
 
 ERP: These operate on .erp average files (not raw EEG)
 erpreref (Rereference ERP)
-Measure
-Grand average 
+10. Measure	meas.m
+11. Grand average	gavg.m
 
 
 OPTIONS: 
