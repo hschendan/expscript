@@ -7,7 +7,7 @@ function std_flags
 
 global expname pathname_all pathname_raw Windows Linux 
 global save_everything mod ch64 copydata ca m12 CA M12 lrp binlisb
-global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all artif_one avg erprefch gavg meas
+global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all artif_one one all avg erprefch gavg meas
 global allbins file1 file2 file3 set 
                       
 expname = 'std11'; % Modify for your experiment: Your experiment name here, e.g., color, vishape, untask
@@ -65,6 +65,9 @@ artif = 0;       % Artifact Detection for each subject: GARV = Get Artifact Reje
 artif_one = 0;   % run single subject
 
 artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects and create 3 ERP averages (ar, all, bad)
+
+one = 0;    % this is for single subject in eegrefch, aveg, erprefch
+all = 0;    % this is for all subject in eegrefch, aveg, erprefch
 
 % Default flag must be 0 for eegrefch in standard processing order. 
 eegrefch = 1;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR

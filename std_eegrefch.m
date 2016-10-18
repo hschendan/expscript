@@ -1,12 +1,12 @@
 function std_eegrefch
 
-global m12 nraw data_path subject ch64 set ca s n artif_all artif_one
+global m12 nraw data_path subject ch64 set ca s n all one
 
 sfx = '_ebcpya';   %initialise sfx, please modify it yourself
 
 disp('EEG Reference: WORKING ...')
 
-if artif_one
+if one
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Reference to average of M1 and M2 (average mastoids) for EEG % 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,7 +54,7 @@ if artif_one
 end
 
 
-if artif_all
+if all
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Reference to average of M1 and M2 (average mastoids) for EEG % 

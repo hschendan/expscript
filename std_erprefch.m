@@ -4,11 +4,11 @@ function std_erprefch
 % RE-REFERENCE ERP TO AVERAGE MASTOIDS & CAR: ERP CHANNEL OPERATION.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-global M12 nraw pathname_all data_path subject CA ch64 artif_all artif_one s n
+global M12 nraw pathname_all data_path subject CA ch64 all one s n
 
 disp('ERP re-reference: Working ...')
 
-if artif_one
+if one
     
     if M12
         sname = [data_path{n} subject{n} '_ar.erp'];
@@ -52,7 +52,7 @@ if artif_one
 end
 
 %optional
-if artif_all     
+if all     
     if M12
 
         for s=1:nraw

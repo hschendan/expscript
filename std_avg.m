@@ -6,14 +6,14 @@
 
 function  std_avg
 
-global artif_one data_path subject set n artif_all nraw s      
+global one data_path subject set n all nraw s      
    
 disp('ERP Averaging: Working ...')
 
 sfx = '_ebcpya'; %initialise sfx, please modify it yourself
 % Default eeg not re-referenced: ; if eeg is re-referenced then '_ebcpyaaM' or '_ebcpyaca';  
 
-if artif_one
+if one
     sname = [data_path{n} subject{n} sfx set];      
     if exist(sname, 'file')>0               
         clear EEG;  % Clear is to make sure that we start fresh for each subject with the EEG and ERP structures
@@ -53,7 +53,7 @@ if artif_one
 end
 
 % optional
-if artif_all
+if all
     for s=1:nraw
         sname = [data_path{s} subject{s} sfx set];      
         if exist(sname, 'file')>0               
