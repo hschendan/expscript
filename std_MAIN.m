@@ -10,7 +10,7 @@
 % Fixed order: elist -> binlis; commands after this until avg step can change order by moving commands below into new order; commands from avg onwards fixed order
 % Save Command Window output text to a created file 
 
-global os_paraset mod import elist binlis chanloc epoch  addeye artif artif_all artif_one 
+global os_paraset mod import elist binlis chanloc epoch  addeye artif artif_all artif_one eegrefch avg erprefch meas gavg
 
 diary('C:\Users\pzhao\Documents\MATLAB\standard11\diary11.txt'); %***Modify to yours ***%
 
@@ -90,4 +90,29 @@ end
 % This is optional now. Run all subjects in one go
 if artif_all    
     std_artif_all
+end
+
+% Optional: For EEGLab processing only; NOT part of standard ERP processing. NOTE: NEVER RE-REFERENCE TWICE.
+if eegrefch
+   std_eegrefch 
+end
+
+%Average ERP
+if avg
+    std_avg 
+end
+
+%ERPrefch: NOTE: NEVER RE-REFERENCE TWICE.
+if erprefch
+    std_erprefch
+end
+
+%Measure ERPs
+if meas
+    std_meas
+end
+
+%GRAND AVERAGE. Include standard deviation.
+if gavg
+    std_gavg 
 end
