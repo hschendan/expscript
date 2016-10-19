@@ -70,7 +70,7 @@ one = 0;    % this is for single subject in eegrefch, aveg, erprefch
 all = 0;    % this is for all subject in eegrefch, aveg, erprefch
 
 % Default flag must be 0 for eegrefch in standard processing order. 
-eegrefch = 1;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
+eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
 m12 = 1;         % for average mastoids reference (for EEGs); Default
 ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
