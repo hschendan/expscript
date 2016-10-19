@@ -15,7 +15,8 @@ if one
         if exist(sname, 'file')>0               
             clear ERP;  % Clear is to make sure that we start fresh for each subject with the EEG and ERP structures    
             ERP = pop_loaderp('filename', [subject{n} '_ar.erp'] , 'filepath', data_path{n});
-            ERP = pop_erpchanoperator( ERP, [pathname_all 'ERPref64M12.txt'] , 'ErrorMsg', 'popup' );
+            ERP = pop_erpchanoperator( ERP, ['ERPref64M12.txt'] , 'ErrorMsg', 'popup' );
+           % ERP = pop_erpchanoperator( ERP, [pathname_all 'ERPref64M12.txt'] , 'ErrorMsg', 'popup' );
             erpname = [subject{n} '_armM'];  % name for erpset menu
             fname_erp = fullfile(data_path{n}, [erpname '.erp']);
             pop_savemyerp(ERP, 'erpname', erpname, 'filename', fname_erp, 'Warning', 'off');
@@ -60,7 +61,8 @@ if all
             if exist(sname, 'file')>0               
                 clear ERP;  % Clear is to make sure that we start fresh for each subject with the EEG and ERP structures    
                 ERP = pop_loaderp('filename', [subject{s} '_ar.erp'] , 'filepath', data_path{s});
-                ERP = pop_erpchanoperator( ERP, [pathname_all 'ERPref64M12.txt'] , 'ErrorMsg', 'popup' );
+                ERP = pop_erpchanoperator( ERP, ['ERPref64M12.txt'] , 'ErrorMsg', 'popup' );
+                 % ERP = pop_erpchanoperator( ERP, [pathname_all 'ERPref64M12.txt'] , 'ErrorMsg', 'popup' );
                 erpname = [subject{s} '_armM'];  % name for erpset menu
                 fname_erp = fullfile(data_path{s}, [erpname '.erp']);
                 pop_savemyerp(ERP, 'erpname', erpname, 'filename', fname_erp, 'Warning', 'off');
