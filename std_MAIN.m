@@ -107,12 +107,12 @@ if erprefch
     std_erprefch
 end
 
-%Measure ERPs
-if meas
-    std_meas
-end
-
 %GRAND AVERAGE. Include standard deviation.
 if gavg
     std_gavg 
+end
+
+%Measure ERPs
+if meas
+    std_meas
 end
