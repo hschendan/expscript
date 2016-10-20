@@ -100,7 +100,7 @@ fprintf('\n+++++++++++++++\n+ Copy 3 files to CMD folder: done! ... \n++++++++++
 %create erpfiles.txt
 fileID = fopen([pathname_cmd 'erpfiles.txt'], 'w');
 for s = 1:nraw
-    fprintf(fileID, '%s\n', [pathname_anal subject{s} '\' subject{s} '_ar.erp']);
+    fprintf(fileID, '%s\n', [pathname_anal subject{s} '\' subject{s} '_armM.erp']);
 end
 fclose(fileID);
 fprintf('\n+++++++++++++++\n+ Creating erpfiles.txt to CMD folder: done! ... \n+++++++++++++++\n\n');
