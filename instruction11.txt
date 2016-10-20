@@ -138,10 +138,14 @@ END STAGE 1 SCRIPT
 1st time script run, go directly to stage 2. 2nd time script run, GARV between stage 1 and 2
 8. Run std_artif_T.m, where T = subject number, for each subject (GARV: get artefact rejection value parameters and enter in the std_artif_T.m file for each subject). NOTE: Currently std_artif_T.m marks EEG with artifacts using garv parameters from artif step so if this is already run for each subject separately, then skip artif_all.m
 TIP:
-% GARV: when running artif_one, add these 2 lines to artif for each subject after EEG plot line: pop_eegplot( EEG, 1, 1, 1); to pause before save
+% GARV: when running artif_one, add single line artifact detection functions after default artparm lines above. 
+% Also add these 3 lines to artif for each subject
+% before: EEG.setname= [subject{s} sfx x]; to plot EEG, pause to scroll EEG, before save
+% Uncomment the 2 lines to run; comment out to not run
+        pop_eegplot( EEG, 1, 1, 1); 
         fprintf('\n+++++++++++++++\n+ Hit return to save or Ctrl-c to quit and try again with new threshold ... \n+++++++++++++++\n\n', sfx);
         pause();    % Pause to scroll EEG plot
-% delete above 2 lines when all parms done, to run artif_all
+% delete above 3 lines when all parms done, to run artif_all
 
 START STAGE 2 SCRIPT
 8. Artif all (Optional: only need to run if you need to mark EEG artifacts for all subjects. Marks EEG with artifacts using garv parameters from artif step. OK to run twice (first for std_artif_T.m and second here) so default flag = 1)
