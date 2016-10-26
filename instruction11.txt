@@ -41,8 +41,10 @@ Please do the following (make your own note if anything is missing here):
    	(4) 'artif_CreateFiles.m'
 		-- 'fidIn'
 	(5) 'artif_one.m'
-		-- 'n' (the subject number you want to run for artifact detection)
-        (6) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
+		-- 'n' (the subject number you want to run for artifact detection on ONE subject at a time)
+	(6) 'artif_all.m'
+		-- 's' (the subject numbers, e.g., [1 2 3 4 ] you want to run for artifact detection on ALL subjects)
+        (7) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
                 -- 'sfx' %initial suffix (from previous steps already run, e.g., sfx = '_e' means import and elist done; for				input file name)
 		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for 
  
@@ -135,6 +137,7 @@ EEG: These steps must be run on the EEG data in this order.
 6. Addeye	addeye.m	input suffix: 	sfx = '_ebcp'	output suffix:	x = 'y'
 7. Create artif	artif.m	Create std_artif_T.m, where T = subject number, for each subject.
 END STAGE 1 SCRIPT
+
 1st time script run, go directly to stage 2. 2nd time script run, GARV between stage 1 and 2
 8. Run std_artif_T.m, where T = subject number, for each subject (GARV: get artefact rejection value parameters and enter in the std_artif_T.m file for each subject). NOTE: Currently std_artif_T.m marks EEG with artifacts using garv parameters from artif step so if this is already run for each subject separately, then skip artif_all.m
 TIP:
