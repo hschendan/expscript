@@ -66,8 +66,8 @@ artif_one = 0;   % run single subject; set flag for one below to 1, if you want 
 artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
 
 % MUST set either one or all to 1 when running stage 2 in order to avg or reref
-one = 0;    % Use with artif_one; this is for single subject in eegrefch, aveg, erprefch
-all = 0;    % Use with artif_all; this is for all subjects in eegrefch, aveg, erprefch
+one = 0;    % Use with artif_one; this is for single subject in eegrefch, avg, erprefch
+all = 0;    % Use with artif_all; this is for all subjects in eegrefch, avg, erprefch
 
 % Default flag must be 0 for eegrefch in standard processing order. 
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
