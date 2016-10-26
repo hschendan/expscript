@@ -61,22 +61,22 @@ artif = 0;       % Artifact Detection for each subject: GARV = Get Artifact Reje
                  %      change the flags at stage 2 equal to 1;       %
                  %      then run MAIN.m again for singla subject      %
                  %****************************************************%
+% Either run artif_one or artif_all but not both
+artif_one = 0;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
+artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
 
-artif_one = 0;   % run single subject
-
-artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects and create 3 ERP averages (ar, all, bad)
-
-one = 0;    % this is for single subject in eegrefch, aveg, erprefch
-all = 0;    % this is for all subject in eegrefch, aveg, erprefch
+% MUST set either one or all to 1 when running stage 2 in order to avg or reref
+one = 0;    % Use with artif_one; this is for single subject in eegrefch, aveg, erprefch
+all = 0;    % Use with artif_all; this is for all subjects in eegrefch, aveg, erprefch
 
 % Default flag must be 0 for eegrefch in standard processing order. 
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
 m12 = 1;         % for average mastoids reference (for EEGs); Default
 ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
-avg = 0;         % Default flag must be 0; NOT implemented separately; done in artif_all
+avg = 0;         % avg EEG to create .erp file; creates 4 ERP averages (ar, all, bad, and ar with extra info)
 
-% Default flag must be 1 for erpreref in standard processing order. 
+% When ready to re-reference: Default flag must be 1 for erpreref in standard processing order. 
 erprefch = 1;    % default M12, option CAR.
 M12 = 1;         % for average mastoids reference (for ERPs); Default
 CA = 0;          % for common average reference (for ERPs); 
