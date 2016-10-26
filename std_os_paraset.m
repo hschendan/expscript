@@ -3,7 +3,7 @@ function std_os_paraset
 global Windows Linux
 global pathname_all pathname_anal pathname_cmd pathname_gav pathname_meas pathname_beh
 
-global pathname_raw chloc64 file1 artparm file2 
+global pathname_raw chloc64 file1 artparm file2 erpfiles
 global rawdata nraw  subject 
 global bdf data_path
 
@@ -97,13 +97,16 @@ source = 'C:\Users\pzhao\Documents\MATLAB\3Files';  % **Modify to yours ** %
 copyfile(source,fullfile(pathname_cmd));
 fprintf('\n+++++++++++++++\n+ Copy 3 files to CMD folder: done! ... \n+++++++++++++++\n\n');
 
+%%%%% HS MOD
 %create erpfiles.txt
-fileID = fopen([pathname_cmd 'erpfiles.txt'], 'w');
-for s = 1:nraw
-    fprintf(fileID, '%s\n', [pathname_anal subject{s} '\' subject{s} '_armM.erp']);
+if erpfiles
+    fileID = fopen([pathname_cmd 'erpfiles.txt'], 'w');
+    for s = 1:nraw
+        fprintf(fileID, '%s\n', [pathname_anal subject{s} '\' subject{s} '_armM.erp']);
+    end
+    fclose(fileID);
+    fprintf('\n+++++++++++++++\n+ Creating erpfiles.txt to CMD folder: done! ... \n+++++++++++++++\n\n');
 end
-fclose(fileID);
-fprintf('\n+++++++++++++++\n+ Creating erpfiles.txt to CMD folder: done! ... \n+++++++++++++++\n\n');
 
 data_path = cell(5,1);
 for s = 1:nraw
