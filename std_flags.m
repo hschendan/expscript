@@ -6,7 +6,7 @@
 function std_flags
 
 global expname pathname_all pathname_raw Windows Linux 
-global save_everything mod ch64 copydata ca m12 CA M12 lrp binlisb
+global save_everything mod ch64 copydata ca m12 CA M12 lrp binlisb erpfiles
 global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all artif_one one all avg erprefch gavg meas
 global allbins file1 file2 file3 set 
                       
@@ -40,7 +40,8 @@ binlisb = 1;     % default is 1; binlister option: Use bin # to label epochs, tr
                  
       %*if run the following functions not in one go, need to set 'clr' = 0 after the first batch of functions.
               
-% Preparation stage                        
+% Preparation stage
+erpfiles = 0;    % This only need run once: default = 0; when run os_paraset, create erpfiles.txt with all .erp filenames for input to gavg and meas; set to 0 if you manually modify erpfiles.txt or will over-write your erpfiles.txt
 os_paraset = 1;  %This need always be 1
 import = 0;      %This only need run once
 copydata = 0;    % % Default flag is 0. optional to copy the raw data into a seperate folder
