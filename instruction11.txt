@@ -48,7 +48,7 @@ Please do the following (make your own note if anything is missing here):
                 -- 'sfx' %initial suffix (from previous steps already run, e.g., sfx = '_e' means import and elist done; for				input file name)
 		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for output file name
 
-8. set up all flag values in 'flags.m'
+10. set up all flag values in 'flags.m'
 
 ------------------------
 * Run std_MAIN.m *
