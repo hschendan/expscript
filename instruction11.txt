@@ -1,4 +1,4 @@
-				***************************
+,				***************************
 				*		          *	
 				*   Instruction v.11      *
 				*			  *
@@ -11,7 +11,7 @@ Please do the following (make your own note if anything is missing here):
 
 1. install MATLAB2015a
 2. install EEGLab v13.5.4b (recommed not to save in toolbox, but in 'my documents')
-3. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder)
+3. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder) or latest version (not tested yet)
 4. install BIOSIG v3.0.3 (or v3.0.7???) (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
 5. have the following 3 files ready in a  folder named '3Files': 
 	- 'bdf.txt', 
