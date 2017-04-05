@@ -69,7 +69,7 @@ end
 
 list = dir(fullfile([pathname_raw '*.bdf']));
 sname = {list.name};
-expression =  'color_s'; % modify to the string which precede the sequence number in the file name of your experiment
+expression =  'color_s'; % modify to the string that precedes the subject number in the file name of your experiment
 replace = '';
 sname_rearranged = regexprep(sname, expression, replace, 'ignorecase'); 
 [sname_rearranged_sorted, idx_sorted] = sort(sname_rearranged);
