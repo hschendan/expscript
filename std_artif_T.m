@@ -180,7 +180,6 @@ EEG = pop_artdiff( EEG , 'Channel',  [68:69], 'Flag',  8, 'Review', 'off', 'Thre
         % Rename columns
         T.Properties.VariableNames={'Bin','Desc','Total','Acce','Rej'};
         % Write into spreadsheet
-%         writetable(T,strcat( data_path{s},subject{s},'.xlsx'),'sheet',subject{s})
         writetable(T,strcat(expname, '_trials_perbin.xlsx'),'sheet',subject{s})
         % ERP = pop_averager( EEG, 'Criterion', 'good', 'Stdev', 'on');
         
