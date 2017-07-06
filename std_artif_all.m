@@ -4,11 +4,11 @@ function std_artif_all
 
 disp('After modify arti for each subject, now running artifact rejection for all subjects ...')
 
-global nraw subject
+global subject
 
-for s=1:nraw
+for s= [1, 2, 5]; %please modify here for the subject you want to run
         fprintf('\n++++\n+ Begin artifact rejection for %s ... \n++++\n\n', subject{s}); 
-        f = cell(1, nraw);
+        f = cell(1, length(s));
         f = strcat('std_artif_',subject{s});
         fd = str2func(f);
         fd(s);

@@ -10,7 +10,7 @@
 % Fixed order: elist -> binlis; commands after this until avg step can change order by moving commands below into new order; commands from avg onwards fixed order
 % Save Command Window output text to a created file 
 
-global os_paraset mod import elist binlis chanloc epoch  addeye artif artif_all eegrefch avg erprefch gavg meas 
+global os_paraset mod import elist binlis chanloc epoch  addeye artif artif_all artif_one eegrefch avg erprefch meas gavg
 
 diary('C:\Users\pzhao\Documents\MATLAB\standard11\diary11.txt'); %***Modify to yours ***%
 
@@ -82,8 +82,13 @@ end
                 %      change the flags at stage 2 equal to 1;      %
                 %      then run MAIN.m again;                       %
                 %***************************************************%
+                
+if artif_one    %run single subject
+    std_artif_one
+end
 
-if artif_all
+% This is optional now. Run all subjects in one go
+if artif_all    
     std_artif_all
 end
 
@@ -102,13 +107,12 @@ if erprefch
     std_erprefch
 end
 
-%Measure ERPs
-if meas
-    std_meas
-end
-
 %GRAND AVERAGE. Include standard deviation.
 if gavg
     std_gavg 
 end
-    
+
+%Measure ERPs
+if meas
+    std_meas
+end
