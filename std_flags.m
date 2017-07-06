@@ -71,19 +71,11 @@ one = 0;    % Use with artif_one; this is for single subject in eegrefch, avg, e
 all = 0;    % Use with artif_all; this is for all subjects in eegrefch, avg, erprefch
 
 % Default flag must be 0 for eegrefch in standard processing order. 
-<<<<<<< HEAD
-eegrefch = 0;    % Default flag = 0; Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
-m12 = 0;         % for average mastoids reference (for EEGs); Default
-ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
-
-avg = 1;         % Default flag must be 1 at second stage; NOTE: should be done also in artif to assess ERPs
-=======
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
 m12 = 1;         % for average mastoids reference (for EEGs); Default
 ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
 
 avg = 0;         % avg EEG to create .erp file; creates 4 ERP averages (ar, all, bad, and ar with extra info)
->>>>>>> a0638d5d9ff197b6033be01a7bbbbe7c432c6701
 
 % When ready to re-reference: Default flag must be 1 for erpreref in standard processing order. 
 erprefch = 1;    % default M12, option CAR.
