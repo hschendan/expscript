@@ -23,3 +23,4 @@ TO DO (in order of priority):
 * Windows vs. linux options
 * ANOVA after ERP measure http://www.mathworks.com/help/stats/analysis-of-variance-anova-1.html?s_tid=gn_loc_drop
 * User friendly
+
