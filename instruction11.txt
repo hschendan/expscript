@@ -286,3 +286,5 @@ EEG = pop_artdiff( EEG , 'Channel',  [43:50], 'Flag',  8, 'Review', 'off', 'Thre
 EEG = pop_artdiff( EEG , 'Channel',  [51:60], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
 EEG = pop_artdiff( EEG , 'Channel',  [61:64], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
 EEG = pop_artdiff( EEG , 'Channel',  [68:69], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+
+
