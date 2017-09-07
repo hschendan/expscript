@@ -1,6 +1,6 @@
 function std_artif_T(s)
   
-global data_path subject ch64 artparm set
+global data_path subject ch64 artparm set expname
 
 sfx = '_ebcpy'; % initialise sfx, please modify it yourself
 x = 'a';
@@ -34,122 +34,122 @@ EEG = pop_artdiff( EEG , 'Channel',  [1:64,68:69], 'Flag',  8, 'Review', 'off', 
 % and paste lines from excel to add to this artif for each subject.
 %  Some below duplicate garvparms.txt (e.g., eye channels) so can be
 % deleted, unless you need to use to detect a few unusual trials.
-
-EEG = pop_artextval( EEG, 'Channel', [1], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [2], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [3], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [4], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [5], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [6], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [7], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [8:10], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [11:20], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [21:30], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [31:32], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [33], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [34], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [35], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [36], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [37], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [38], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [39], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [40], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [41], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [42], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [43:50], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [51:60], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [61:64], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [65:66], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [67], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [68:69], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [70], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-EEG = pop_artextval( EEG, 'Channel', [71], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
-
-EEG = pop_artstep( EEG , 'Channel', [1], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [2], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [3], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [4], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [5], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [6], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [7], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [8:10], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [11:20], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [21:30], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [31:32], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [33], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [34], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [35], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [36], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [37], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [38], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [39], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [40], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [41], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [42], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [43:50], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [51:60], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [61:64], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [65:66], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [67], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [68:69], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [70], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-EEG = pop_artstep( EEG , 'Channel', [71], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
-
-EEG = pop_artmwppth( EEG , 'Channel',  [1], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [2], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [3], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [4], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [5], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [6], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [7], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [8:10], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [11:20], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [21:30], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [31:32], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [33], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [34], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [35], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [36], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [37], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [38], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [39], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [40], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [41], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [42], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [43:50], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [51:60], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [61:64], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [65:66], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [67], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [68:69], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [70], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-EEG = pop_artmwppth( EEG , 'Channel',  [71], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
-
-EEG = pop_artdiff( EEG , 'Channel',  [1], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [2], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [3], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [4], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [5], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [6], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [7], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [8:10], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [11:20], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [21:30], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [31:32], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [33], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [34], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [35], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [36], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [37], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [38], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [39], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [40], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [41], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [42], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [43:50], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [51:60], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [61:64], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
-EEG = pop_artdiff( EEG , 'Channel',  [68:69], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% 
+% EEG = pop_artextval( EEG, 'Channel', [1], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [2], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [3], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [4], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [5], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [6], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [7], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [8:10], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [11:20], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [21:30], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [31:32], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [33], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [34], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [35], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [36], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [37], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [38], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [39], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [40], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [41], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [42], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [43:50], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [51:60], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [61:64], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [65:66], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [67], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [68:69], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [70], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% EEG = pop_artextval( EEG, 'Channel', [71], 'Flag',  2, 'Review', 'off', 'Threshold', [-125 125], 'Twindow', [-200 900]); %Voltage threshold
+% 
+% EEG = pop_artstep( EEG , 'Channel', [1], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [2], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [3], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [4], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [5], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [6], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [7], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [8:10], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [11:20], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [21:30], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [31:32], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [33], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [34], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [35], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [36], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [37], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [38], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [39], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [40], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [41], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [42], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [43:50], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [51:60], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [61:64], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [65:66], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [67], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [68:69], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [70], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% EEG = pop_artstep( EEG , 'Channel', [71], 'Flag', 5, 'Review', 'off', 'Threshold',  50, 'Twindow', [ -200 900], 'Windowsize',  400, 'Windowstep',  10 ); % step-like artifacts
+% 
+% EEG = pop_artmwppth( EEG , 'Channel',  [1], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [2], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [3], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [4], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [5], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [6], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [7], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [8:10], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [11:20], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [21:30], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [31:32], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [33], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [34], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [35], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [36], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [37], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [38], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [39], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [40], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [41], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [42], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [43:50], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [51:60], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [61:64], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [65:66], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [67], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [68:69], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [70], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% EEG = pop_artmwppth( EEG , 'Channel',  [71], 'Flag',  6, 'Review', 'off', 'Threshold', 150, 'Twindow', [ -200 900], 'Windowsize',  200, 'Windowstep',  50 ); % P2P
+% 
+% EEG = pop_artdiff( EEG , 'Channel',  [1], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [2], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [3], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [4], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [5], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [6], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [7], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [8:10], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [11:20], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [21:30], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [31:32], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [33], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [34], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [35], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [36], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [37], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [38], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [39], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [40], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [41], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [42], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [43:50], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [51:60], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [61:64], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+% EEG = pop_artdiff( EEG , 'Channel',  [68:69], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
          else    % 32 channel cap: TO check
             EEG = pop_artextval( EEG, 'Channel', [1:32,38:39], 'Flag',  2, 'Review', 'off', 'Threshold', [ artparms(s,1) artparms(s,2)], 'Twindow', [-200 900]); %Voltage threshold
             EEG = pop_artstep( EEG , 'Channel',  39, 'Flag',  3, 'Review', 'off', 'Threshold',  artparms(s,3), 'Twindow', [ -200 900], 'Windowsize',  artparms(s,4), 'Windowstep',  artparms(s,5) ); % step-like artifacts VEOG
@@ -168,6 +168,22 @@ EEG = pop_artdiff( EEG , 'Channel',  [68:69], 'Flag',  8, 'Review', 'off', 'Thre
         pop_summary_AR_eeg_detection(EEG, [data_path{s}, subject{s} '_EEG_arTab.txt']);  % Save ar Table
         values = pop_rt2text(EEG, 'arfilter', 'on', 'eventlist',  1, 'filename', [data_path{s} EEG.setname '_arRT.txt'], 'header','on', 'listformat', 'basic' );
         values = pop_rt2text(EEG, 'arfilter', 'on', 'eventlist',  1, 'filename', [data_path{s} EEG.setname '_arRTs.txt'], 'header','on', 'listformat', 'itemized' );
+                [EEG, tprej, acce, rej, histoflags ] = pop_summary_AR_eeg_detection(EEG,'none');
+        % Create table of EEG, to get bins   
+        nbins = struct2table(EEG.EVENTLIST.bdf);
+        % Create total trials
+        acce = transpose(acce);
+        rej = transpose(rej);
+        ttrials = acce + rej;
+        % Create table 
+        T = table(nbins.namebin,nbins.description, ttrials, acce,rej);
+        % Rename columns
+        T.Properties.VariableNames={'Bin','Desc','Total','Acce','Rej'};
+        % Write into spreadsheet
+        writetable(T,strcat(expname, '_trials_perbin.xlsx'),'sheet',subject{s})
+        % ERP = pop_averager( EEG, 'Criterion', 'good', 'Stdev', 'on');
+        
+        
     % ERP = pop_averager( EEG, 'Criterion', 'good', 'Stdev', 'on');
     % erpname = [subject{s} 'M12_ar'];  % name for erpset menu
     % fname_erp= fullfile(data_path{s}, [erpname '.erp']);
