@@ -19,3 +19,5 @@ disp('Measuring ERPs ...')
     values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 700 899], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '700-899_All.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'meanbl', 'Resolution',6, 'Warning', 'off' );
 
     fprintf('\n+++++++++++++++\n+ Measure ERPs: done! ... \n+++++++++++++++\n\n');
+    std_meas_conversion
+    fprintf('\n+++++++++++++++\n+ ERP conversion to .csv: done! ... \n+++++++++++++++\n\n');
