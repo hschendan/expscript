@@ -39,13 +39,4 @@ for i = 1:length(dir(pathname_meas));
     end
 end
 
-%     fprintf('\n+++++++++++++++\n+ No files to move: exiting! ... \n+++++++++++++++\n\n');
-
-
-%     for i = 1:length(dir(pathname_meas,txtfiles))
-%     dir
-% end
-
-
-
-    fprintf('\n+++++++++++++++\n+ Measure ERPs: done! ... \n+++++++++++++++\n\n');
+    fprintf('\n+++++++++++++++\n+ ERP measurement conversion: done! ... \n+++++++++++++++\n\n');
