@@ -7,21 +7,22 @@ function std_meas_conversion
 global pathname_meas ch64
 
 disp('Converting .txt measurements to .csv...')
-channels=[64,32];
 dirs = dir(pathname_meas);
-counter=1;
-bin_num=1;
-col_labs={};
+
 for i = 1:length(dir(pathname_meas));    
     if strfind(dirs(i).name,'All.txt');
         datas = readtable(dirs(i).name,'delimiter','\t');
-        ncols = (height(datas)/std_erp_count)  ;      
+        ncols = (height(datas)/std_erp_count);
+        channels=[64,32];
+        counter=1;
+        bin_num=1;
+        col_labs=cell(1, ncols);
         for j = 1:(ncols)
             if counter < channels(2-ch64)
-                col_labs{j}={strcat(char(datas(j,'chlabel').chlabel),'_',int2str((bin_num)))};
+                col_labs{j}=strcat(datas(j,'chlabel').chlabel,'_',int2str((bin_num)));
                 counter=counter+1;
             else
-                col_labs{j}={strcat(char(datas(j,'chlabel').chlabel),'_',int2str((bin_num)))};
+                col_labs{j}=strcat(datas(j,'chlabel').chlabel,'_',int2str((bin_num)));
                 counter = 1;
                 bin_num=bin_num+1;
             end
@@ -39,4 +40,4 @@ for i = 1:length(dir(pathname_meas));
     end
 end
 
-    fprintf('\n+++++++++++++++\n+ ERP measurement conversion: done! ... \n+++++++++++++++\n\n');
+    fprintf('\n+++++++++++++++\n+ ERP measurement conversion to .csv: done! ... \n+++++++++++++++\n\n');
