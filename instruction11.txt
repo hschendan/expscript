@@ -26,7 +26,7 @@ Please do the following (make your own note if anything is missing here):
 		  ==> 'save'
 9. modifications are needed in the following functions:
    	(1) 'MAIN.m' 
-		-- 'diary' 
+		-- 'diary' (pathname)
 		-- Optional: Change order of steps by changing order of module calls 
    	(2) 'flags.m'  
 		-- 'expname'
