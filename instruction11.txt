@@ -38,7 +38,7 @@ Please do the following (make your own note if anything is missing here):
 		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg and to measure meas
   	(3) 'os_paraset.m' (old versions: and/or 'paraset.m'): 
 		-- 'expression'
-		-- 'source'
+		-- 'source' (pathname)
    	(4) 'artif_CreateFiles.m'
 		-- 'fidIn'
 	(5) 'artif_one.m'
