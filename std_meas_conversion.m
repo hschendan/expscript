@@ -10,7 +10,7 @@ disp('Converting .txt measurements to .csv...')
 dirs = dir(pathname_meas);
 
 for i = 1:length(dir(pathname_meas));    
-    if strfind(dirs(i).name,'All.txt');
+    if strfind(dirs(i).name,'.txt');
         datas = readtable(dirs(i).name,'delimiter','\t');
         ncols = (height(datas)/std_erp_count);
         channels=[64,32];
