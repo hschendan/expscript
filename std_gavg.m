@@ -16,6 +16,10 @@ elseif CA
     erp_extension = 'CAR_gav';
     erp_LP_extension = 'CAR_gavLp30';
     channels_to_filter = [1:71,74];
+else % default recording reference
+    erp_extension = '_gav';
+    erp_LP_extension = '_gavLp30';
+    channels_to_filter = [1:71];    
 end
 
 % Stimulus-locked
