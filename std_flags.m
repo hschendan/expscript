@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % * CHANGE * FLAGS for each experiment
 % SELECT FLAGS, as needed for each phase of analysis
@@ -9,6 +10,7 @@ global expname pathname_all pathname_raw Windows Linux
 global save_everything mod ch64 copydata ca m12 CA M12 lrp binlisb erpfiles
 global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all artif_one one all avg erprefch gavg meas
 global allbins file1 file2 file3 set 
+global n % STAGE 2 ONE
                       
 expname = 'std11'; % Modify for your experiment: Your experiment name here, e.g., color, vishape, untask
 pathname_all = 'C:\Users\pzhao\Documents\MATLAB\standard11\'; %% Modify for your experiment: where parent folder is 
@@ -62,13 +64,15 @@ artif = 0;       % Artifact Detection for each subject: GARV = Get Artifact Reje
                  %      change the flags at stage 2 equal to 1;       %
                  %      then run MAIN.m again for singla subject      %
                  %****************************************************%
-% Either run artif_one or artif_all but not both
-artif_one = 0;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
-artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
-
-% MUST set either one or all to 1 when running stage 2 in order to avg or reref
-one = 0;    % Use with artif_one; this is for single subject in eegrefch, avg, erprefch
+% MUST set either all or one to 1 when running stage 2 in order to avg or reref
 all = 0;    % Use with artif_all; this is for all subjects in eegrefch, avg, erprefch
+one = 1;    % Use with artif_one; this is for single subject in eegrefch, avg, erprefch
+n=20; %modify here for the ONE subject you want % UNIVERSAL ONE
+
+% To GARV and detect artifacts: Either run artif_all or artif_one but not both (never set both to 1).
+% Once no more GARV to do, set both to 0.
+artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
+artif_one = 1;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
 
 % Default flag must be 0 for eegrefch in standard processing order. 
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
