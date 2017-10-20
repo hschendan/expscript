@@ -65,14 +65,14 @@ artif = 0;       % Artifact Detection for each subject: GARV = Get Artifact Reje
                  %      then run MAIN.m again for singla subject      %
                  %****************************************************%
 % MUST set either all or one to 1 when running stage 2 in order to avg or reref
-all = 0;    % Use with artif_all; this is for all subjects in eegrefch, avg, erprefch
-one = 1;    % Use with artif_one; this is for single subject in eegrefch, avg, erprefch
+all = 1;    % Use with artif_all; this is for all subjects in eegrefch, avg, erprefch
+one = 0;    % Use with artif_one; this is for single subject in eegrefch, avg, erprefch
 n=20; %modify here for the ONE subject you want % UNIVERSAL ONE
 
 % To GARV and detect artifacts: Either run artif_all or artif_one but not both (never set both to 1).
 % Once no more GARV to do, set both to 0.
-artif_all = 0;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
-artif_one = 1;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
+artif_all = 1;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
+artif_one = 0;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
 
 % Default flag must be 0 for eegrefch in standard processing order. 
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
@@ -82,7 +82,7 @@ ca = 0;          % common average reference, in addition to standard mastoid ref
 avg = 0;         % avg EEG to create .erp file; creates 4 ERP averages (ar, all, bad, and ar with extra info)
 
 % When ready to re-reference: Default flag must be 1 for erpreref in standard processing order. 
-erprefch = 1;    % default M12, option CAR.
+erprefch = 0;    % default M12, option CAR.
 M12 = 1;         % for average mastoids reference (for ERPs); Default
 CA = 0;          % for common average reference (for ERPs); 
 
