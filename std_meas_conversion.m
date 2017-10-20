@@ -19,13 +19,14 @@ for i = 1:length(dir(pathname_meas));
         col_labs=cell(1, ncols);
         for j = 1:(ncols)
             if counter < channels(2-ch64)
+
                 if isvarname(char(datas(j,'chlabel').chlabel))
                     col_labs{j}=strcat(char(datas(j,'chlabel').chlabel),'_',int2str((bin_num)));
                 else
                     col_labs{j}=strcat('e',int2str(datas(j,'chlabel').chlabel),'_',int2str((bin_num)));
                 end
                 counter=counter+1; 
-          
+        
             else
                 if isvarname(char(datas(j,'chlabel').chlabel))
                     col_labs{j}=strcat(char(datas(j,'chlabel').chlabel),'_',int2str((bin_num)));
@@ -36,6 +37,7 @@ for i = 1:length(dir(pathname_meas));
                 bin_num=bin_num+1;
             end
         end   
+
     % create new matrix - participant x electrode
     transposed_column = transpose(table2cell(datas(:,'value')));
     newTable = reshape(transposed_column,ncols, std_erp_count);

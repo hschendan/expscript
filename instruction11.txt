@@ -1,4 +1,5 @@
-				***************************
+
+***************************
 				*		          *	
 				*   Instruction v.11      *
 				*			  *
@@ -11,7 +12,7 @@ Please do the following (make your own note if anything is missing here):
 
 1. install MATLAB2015a
 2. install EEGLab v13.5.4b (recommed not to save in toolbox, but in 'my documents')
-3. install ERPLab v5.1.1.0 (save in EEGLab 'plugins' folder) or latest version (not tested yet)
+3. install ERPLab (latest version -not tested yet but should work or v5.1.1.0 - tested with script): save in EEGLab 'plugins' folder
 4. install BIOSIG v3.0.3 (or v3.0.7???) (http://sccn.ucsd.edu/wiki/EEGLAB_Plugins, save in EEGLab 'plugins')
 5. have the following 3 files ready in a  folder named '3Files': 
 	- 'bdf.txt', 
@@ -25,7 +26,7 @@ Please do the following (make your own note if anything is missing here):
 		  ==> 'save'
 9. modifications are needed in the following functions:
    	(1) 'MAIN.m' 
-		-- 'diary' 
+		-- 'diary' (pathname)
 		-- Optional: Change order of steps by changing order of module calls 
    	(2) 'flags.m'  
 		-- 'expname'
@@ -37,13 +38,15 @@ Please do the following (make your own note if anything is missing here):
 		-- file3 = 'erpfiles.txt'; Modify for your experiment, subject .erp files to include in grand average gavg and to measure meas
   	(3) 'os_paraset.m' (old versions: and/or 'paraset.m'): 
 		-- 'expression'
-		-- 'source'
+		-- 'source' (pathname)
    	(4) 'artif_CreateFiles.m'
 		-- 'fidIn'
 	(5) 'artif_one.m'
 		-- 'n' (the subject number you want to run for artifact detection on ONE subject at a time)
 	(6) 'artif_all.m'
-		-- 's' (the subject numbers, e.g., [1 2 3 4 ] you want to run for artifact detection on ALL subjects)
+		-- 's' (the subject numbers, e.g., [1 2 3 4 ] you want to run for artifact detection on ALL subjects). 
+		You can copy what you need from this: 
+		[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
         (7) 'import.m', 'elist.m', 'binlis.m', 'chanloc.m', 'epoch.m', 'addeye.m','artif_T.m', 'eegrefch.m', 
                 -- 'sfx' %initial suffix (from previous steps already run, e.g., sfx = '_e' means import and elist done; for				input file name)
 		-- 'x' % add (e.g., x = 'b') to suffix; please modify the definition of x (e.g., 'b') yourself; this is for output file name
