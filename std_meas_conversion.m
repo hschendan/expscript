@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Convert ERP measurement files into .csv
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13,7 +13,7 @@ for i = 1:length(dir(pathname_meas));
     if strfind(dirs(i).name,'.txt');
         datas = readtable(dirs(i).name,'delimiter','\t');
         ncols = (height(datas)/std_erp_count);
-        channels=[64,32];
+        channels=[64,32]; % either 64 or 32 channels assumed; change to the number of channels you measured
         counter=1;
         bin_num=1;
         col_labs=cell(1, ncols);
