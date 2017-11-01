@@ -42,7 +42,12 @@ disp('Measuring ERPs ...')
     % Optional: Other times
     % N3
      values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 232 450], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '232-450_All_Narea.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'arean', 'PeakOnset',  1, 'Resolution',6, 'Warning', 'off' );
-
+% Area for positive regions: LPC
+   % values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 500 699], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '500-699_All_Parea.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'areap', 'PeakOnset',  1, 'Resolution',6, 'Warning', 'off' );
+    values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 700 899], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '700-899_All_Parea.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'areap', 'PeakOnset',  1, 'Resolution',6, 'Warning', 'off' );
+    % More LPC
+  %  values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 500 599], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '500-599_All_Parea.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'areap', 'PeakOnset',  1, 'Resolution',6, 'Warning', 'off' );
+    values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 600 899], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '600-899_All_Parea.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'areap', 'PeakOnset',  1, 'Resolution',6, 'Warning', 'off' );
 
 % PEAK ***** FILTERED ERPs only ***** NOTE: peak fails on null 0 trial bins so choose critical bins with > 0 trials. 
 % UNCOMMENT values lines below IF MEASURING FILTERED ERPS and WANT PEAK MEASURED
