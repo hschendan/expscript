@@ -25,6 +25,7 @@ EEG = pop_artmwppth( EEG , 'Channel',  [1:64,68:69], 'Flag',  6, 'Review', 'off'
 EEG = pop_artmwppth( EEG , 'Channel',  71, 'Flag',  7, 'Review', 'off', 'Threshold',  artparm(s,15), 'Twindow', [ -200 900], 'Windowsize',  artparm(s,16), 'Windowstep',  artparm(s,17) ); % P2P VOG           
 EEG = pop_artdiff( EEG , 'Channel',  [1:64,68:69], 'Flag',  8, 'Review', 'off', 'Threshold',  artparm(s,18), 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
 
+
 % MANUAL entry of parameters here.
 % Threshold must be LOWER than above garvparm.txt to catch more artif trials.
 % Change any parameters below and add/delete artif function lines, as needed.
@@ -150,6 +151,7 @@ EEG = pop_artdiff( EEG , 'Channel',  [1:64,68:69], 'Flag',  8, 'Review', 'off', 
 % EEG = pop_artdiff( EEG , 'Channel',  [51:60], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
 % EEG = pop_artdiff( EEG , 'Channel',  [61:64], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
 % EEG = pop_artdiff( EEG , 'Channel',  [68:69], 'Flag',  8, 'Review', 'off', 'Threshold',  100, 'Twindow', [ -200 900] ); %Extreme spikiness, eg. muscle
+
          else    % 32 channel cap: TO check
             EEG = pop_artextval( EEG, 'Channel', [1:32,38:39], 'Flag',  2, 'Review', 'off', 'Threshold', [ artparms(s,1) artparms(s,2)], 'Twindow', [-200 900]); %Voltage threshold
             EEG = pop_artstep( EEG , 'Channel',  39, 'Flag',  3, 'Review', 'off', 'Threshold',  artparms(s,3), 'Twindow', [ -200 900], 'Windowsize',  artparms(s,4), 'Windowstep',  artparms(s,5) ); % step-like artifacts VEOG
@@ -159,7 +161,18 @@ EEG = pop_artdiff( EEG , 'Channel',  [1:64,68:69], 'Flag',  8, 'Review', 'off', 
             EEG = pop_artmwppth( EEG , 'Channel',  39, 'Flag',  7, 'Review', 'off', 'Threshold',  artparms(s,15), 'Twindow', [ -200 900], 'Windowsize',  artparms(s,16), 'Windowstep',  artparms(s,17) ); % P2P VOG           
             EEG = pop_artdiff( EEG , 'Channel',  1:32, 'Flag',  8, 'Review', 'off', 'Threshold',  artparms(s,18), 'Twindow', [ -200 900] ); %Extreme spikiness
          end    
-        pop_eegplot( EEG, 1, 1, 1);
+
+        
+% GARV: when running artif_one, add single line artifact detection functions after default artparm lines above. 
+% Also add these 3 lines to artif for each subject
+% before: EEG.setname= [subject{s} sfx x]; to plot EEG, pause to scroll EEG, before save
+% Uncomment the 2 lines to use; comment out to not run
+%        pop_eegplot( EEG, 1, 1, 1); 
+%        fprintf('\n+++++++++++++++\n+ Hit return to save or Ctrl-c to quit and try again with new threshold ... \n+++++++++++++++\n\n', sfx);
+%        pause();    % Pause to scroll EEG plot
+% delete above 3 lines when all parms done, to run artif_all
+
+
         EEG.setname= [subject{s} sfx x];
         
         EEG = pop_saveset(EEG, 'filename', [EEG.setname set], 'filepath', data_path{s});   

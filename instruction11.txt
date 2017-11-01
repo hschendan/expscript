@@ -107,11 +107,10 @@ if os is Windows, automatically do the following:
 ------------------------
 * Please note *
 ------------------------
-1. need to run 'os_paraset.m'once before import.
+1. need to run 'os_paraset.m'once before import. os_paraset.m  will create erpfiles.txt with _ar.erp filenames. erpfiles.txt is input to meas, gavg. Save a copy so this does not get over-written when script re-run. Need to modify erpfiles.txt  for later steps (meas, gavg, to measure, grandaverage rereferenced M12 (STANDARD) or if you want to measure filtered .erp files instead of unfiltered (change filenames to , as default erpfiles.txt is unfiltered)
 2. need to run 'import.m' once.
 3. erpfiles.txt .erp filename list; default is armM (artifacts rejected referenced to M12) for meas and gavg; copy when created and save elsewhere so not overwritten; need to modify if input is filtered or CAR for meas or gavg
 4. erprefch.m uses ERPref64M12.txt default is 64 cap ch referenced to mean mastoids M12; re-reference command file
-
 
 -----------
 *   AoB   *
@@ -151,25 +150,27 @@ TIP:
         pause();    % Pause to scroll EEG plot
 % delete above 3 lines when all parms done, to run artif_all
 
+
 START STAGE 2 SCRIPT
-8. Artif all (Optional: only need to run if you need to mark EEG artifacts for all subjects. Marks EEG with artifacts using garv parameters from artif step. OK to run twice (first for std_artif_T.m and second here) so default flag = 1)
-9. Avg (input is *ar.set and output is .erp average file)
+9. Artif all (Optional: only need to run if you need to mark EEG artifacts for all subjects. Marks EEG with artifacts using garv parameters from artif step. OK to run twice (first for std_artif_T.m and second here) so default flag = 1)
+10. Avg 	avg.m	(input is *ar.set and output is .erp average file and erpfiles.txt): 
 
 ERP: These operate on .erp average files (not raw EEG)
-erpreref (Rereference ERP)
-10. Measure	meas.m
-11. Grand average	gavg.m
+11. erpreref (Rereference ERP)
+12. Measure	meas.m (input: erpfiles.txt (all .erp files: can modify erpfiles.txt to exclude subjects))
+13. Grand average	gavg.m (input: erpfiles.txt (all .erp files: can modify erpfiles.txt to exclude subjects))
+
 
 
 OPTIONS: 
 
 RE-REFERENCE EEG DATA (*.set):
-eegreref (after Artif all (marks EEG with artifacts using garv parameters from artif step). If artefact detection, ICA artefact detection or EEG frequency analysis in eeglab, then reference eegreref after Artif_all, but then do NOT rereference again using erpreref.)
+eegreref (Default flag = 0; (marks EEG with artifacts using garv parameters from artif step). Important: Never run for standard ERP stream, but for other reasons, only run after Artif all. Used only for EEGLab processes of artefact detection, ICA artefact detection or EEG frequency analysis, then eegreref after Artif_all, and do NOT rereference again using erpreref.)
 
 * NOT IMPLEMENTED *
 FILTER:
 ERP: These operate on .erp average files (not raw EEG)
-Filter (before Measure)
+Filter (before Measure then do separate Measure on filtered data)
 
 ******* CRITICAL INFO FOR GARV BELOW ************
 ****** artif_one ***************

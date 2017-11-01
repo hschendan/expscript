@@ -75,6 +75,7 @@ artif_all = 1;   % (optional) after modify artif.m for each subject, mark artifa
 artif_one = 0;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
 
 % Default flag must be 0 for eegrefch in standard processing order. 
+
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
 m12 = 1;         % for average mastoids reference (for EEGs); Default
 ca = 0;          % common average reference, in addition to standard mastoid reference (for EEGs); 
