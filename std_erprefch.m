@@ -16,7 +16,7 @@ if M12
     ref_type = 'MASTOIDS';
 elseif CA
     erpREFtext = ['ERPref64CAR.txt'];
-    erp_ext = '_armCAR';
+    erp_ext = '_armCA';
     ref_type = 'COMMON AVERAGE';
 end
 

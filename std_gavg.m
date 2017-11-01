@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GRAND AVERAGE. Include standard deviation.
+% FILTER GRAND AVERAGE. Default low pass 30 Hz (change to yours)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function std_gavg
@@ -12,14 +13,17 @@ if M12
     erp_extension = 'M12_gav';
     erp_LP_extension = 'M12_gavLp30';
     channels_to_filter = [1:71];
+    % channels_to_filter = [1:65];  % SAI
 elseif CA
-    erp_extension = 'CAR_gav';
-    erp_LP_extension = 'CAR_gavLp30';
+    erp_extension = 'CA_gav';
+    erp_LP_extension = 'CA_gavLp30';
     channels_to_filter = [1:71,74];
+    %     channels_to_filter = [1:64,65]; % SAI
 else % default recording reference
     erp_extension = '_gav';
     erp_LP_extension = '_gavLp30';
     channels_to_filter = [1:71];    
+    % channels_to_filter = [1:65];  SAI
 end
 
 % Stimulus-locked

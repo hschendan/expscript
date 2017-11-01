@@ -97,7 +97,6 @@ source = 'C:\Users\pzhao\Documents\MATLAB\3Files';  % **Modify to yours ** %
 copyfile(source,fullfile(pathname_cmd));
 fprintf('\n+++++++++++++++\n+ Copy 3 files to CMD folder: done! ... \n+++++++++++++++\n\n');
 
-%%%%% HS MOD
 %create erpfiles.txt
 if erpfiles
     fileID = fopen([pathname_cmd 'erpfiles.txt'], 'w');
