@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Measure ERPs
+% Measure ERPs and convert text output to .csv
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function std_meas
@@ -7,8 +7,9 @@ function std_meas
 global pathname_cmd allbins pathname_meas
 
 disp('Measuring ERPs ...')
-% Measure the mean amplitude in all bins at all channels
+% Measure all bins at all channels
 % Save the results in a variable named "values" and in a file in the Measurement folder for the experiment
+
 % MEAN AMPLITUDE
 % std times
     values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 95 115], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '95-115_All.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'meanbl', 'Resolution',6, 'Warning', 'off' );
@@ -55,6 +56,7 @@ disp('Measuring ERPs ...')
 %    values = pop_geterpvalues( {'Loadlist', [pathname_cmd, 'erpfiles.txt']}, [ 145 160], [1:allbins], 1:64, 'Baseline', 'pre', 'Binlabel', 'on', 'FileFormat', 'long', 'Filename', [pathname_meas '145-160_Critf_Npeak.txt'], 'Fracreplace', 'NaN', 'InterpFactor', 1, 'Measure', 'peakampbl', 'Neighborhood',  5, 'PeakOnset',  1, 'Peakpolarity', 'negative', 'Peakreplace', 'absolute', 'Resolution',6, 'Warning', 'off' );
     
     fprintf('\n+++++++++++++++\n+ Measure ERPs: done! ... \n+++++++++++++++\n\n');
-    % Convert to csv
+
+% Convert to csv
     std_meas_conversion
 
