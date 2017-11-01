@@ -94,7 +94,7 @@ erpfilt = 0;    % In erprefch, flag for  M12 or CA must be set to 1 (M12 or CA E
 % erpfiles.txt required in CMD 
 % (copied from 3files, if erpfiles = 0; else if erpfiles = 1, then create erpfiles.txt with default armM names for all subjects): 
 % erpfiles.txt is 1 column list of subject .erp files with pathname in erpfiles.txt
-% GRAND AVERAGE
+% GRAND AVERAGE and FILTER grand average
 gavg = 0;        
 % MEASURE ERP
 meas = 0;        
