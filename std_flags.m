@@ -90,10 +90,13 @@ CA = 0;          % for common average reference (for ERPs);
 % FILTER: If measure filtered data, then filter each subject's ERP (after erprefch, if reref); else measure unfiltered and default 0. 
 erpfilt = 0;    % In erprefch, flag for  M12 or CA must be set to 1 (M12 or CA ERP to be filtered) or both M12 and CA set to 0 (recording reference): Determines input file.
 
+% For gavg and meas:
+% erpfiles.txt required in CMD 
+% (copied from 3files, if erpfiles = 0; else if erpfiles = 1, then create erpfiles.txt with default armM names for all subjects): 
+% erpfiles.txt is 1 column list of subject .erp files with pathname in erpfiles.txt
 % GRAND AVERAGE
-gavg = 0;        % input required in CMD (or from 3files): 1 column list of subject .erp files with pathname in erpfiles.txt
-
+gavg = 0;        
 % MEASURE ERP
-meas = 0;        % input required in CMD (or from 3files): 1 column list of subject .erp files with pathname in erpfiles.txt
+meas = 0;        
 
 fprintf('\n+++++++++++++++\n+ Setup Global and ERPLab Function Flags: done! ... \n+++++++++++++++\n\n');
