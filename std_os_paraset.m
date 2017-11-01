@@ -3,7 +3,7 @@ function std_os_paraset
 global Windows Linux
 global pathname_all pathname_anal pathname_cmd pathname_gav pathname_meas pathname_beh
 
-global pathname_raw chloc64 file1 artparm file2 
+global pathname_raw chloc64 file1 artparm file2 erpfiles
 global rawdata nraw  subject 
 global bdf data_path
 
@@ -23,14 +23,7 @@ if Windows
            mkdir(pathname_all, fname{s});              % then create      
         end
     end
-    
-    if exist(fullfile(pathname_beh, 'BLO/'), 'dir') == 0 
-        mkdir(pathname_beh, 'BLO/'); 
-    end
-            
-    if exist(fullfile(pathname_beh, 'RT/'), 'dir') == 0 
-        mkdir(pathname_beh, 'RT/'); 
-    end
+
         
     fprintf('\n+++++++++++++++\n+ Create folders: done! ... \n+++++++++++++++\n\n');
     
@@ -42,6 +35,14 @@ if Windows
     pathname_gav = strcat(pathname_all, fname{3},'\');
     pathname_meas = strcat(pathname_all,fname{4},'\');
     pathname_beh = strcat(pathname_all,fname{5},'\'); 
+        
+    if exist(fullfile(pathname_beh, 'BLO/'), 'dir') == 0 
+        mkdir(pathname_beh, 'BLO/'); 
+    end  
+    if exist(fullfile(pathname_beh, 'RT/'), 'dir') == 0 
+        mkdir(pathname_beh, 'RT/'); 
+    end
+    
     % WINDOWS END
 
 fprintf('\n+++++++++++++++++++++++\n+ Choose OS & users path: done! ... \n+++++++++++++++++++++++\n\n');     
@@ -68,7 +69,7 @@ end
 
 list = dir(fullfile([pathname_raw '*.bdf']));
 sname = {list.name};
-expression =  'color_s'; % modify to the string which precede the sequence number in the file name of your experiment
+expression =  'color_s'; % modify to the string that precedes the subject number in the file name of your experiment
 replace = '';
 sname_rearranged = regexprep(sname, expression, replace, 'ignorecase'); 
 [sname_rearranged_sorted, idx_sorted] = sort(sname_rearranged);
@@ -96,13 +97,16 @@ source = 'C:\Users\pzhao\Documents\MATLAB\3Files';  % **Modify to yours ** %
 copyfile(source,fullfile(pathname_cmd));
 fprintf('\n+++++++++++++++\n+ Copy 3 files to CMD folder: done! ... \n+++++++++++++++\n\n');
 
+%%%%% HS MOD
 %create erpfiles.txt
-fileID = fopen([pathname_cmd 'erpfiles.txt'], 'w');
-for s = 1:nraw
-    fprintf(fileID, '%s\n', [pathname_anal subject{s} '\' subject{s} '_ar.erp']);
+if erpfiles
+    fileID = fopen([pathname_cmd 'erpfiles.txt'], 'w');
+    for s = 1:nraw
+        fprintf(fileID, '%s\n', [pathname_anal subject{s} '\' subject{s} '_armM.erp']);
+    end
+    fclose(fileID);
+    fprintf('\n+++++++++++++++\n+ Creating erpfiles.txt to CMD folder: done! ... \n+++++++++++++++\n\n');
 end
-fclose(fileID);
-fprintf('\n+++++++++++++++\n+ Creating erpfiles.txt to CMD folder: done! ... \n+++++++++++++++\n\n');
 
 data_path = cell(5,1);
 for s = 1:nraw
