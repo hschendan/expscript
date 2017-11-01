@@ -8,7 +8,7 @@ function std_flags
 
 global expname pathname_all pathname_raw Windows Linux 
 global save_everything mod ch64 copydata ca m12 CA M12 lrp binlisb erpfiles
-global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all artif_one one all avg erprefch gavg meas
+global os_paraset import chanloc elist binlis eegrefch epoch addeye artif artif_all artif_one one all avg erprefch erpfilt gavg meas
 global allbins file1 file2 file3 set 
 global n % STAGE 2 ONE
                       
@@ -19,7 +19,7 @@ pathname_raw = 'C:\Users\pzhao\Documents\MATLAB\ColorRawData\'; % where raw bdf 
 allbins = 174;  %Modify for your experiment: total # bins in bin descriptor file (bdf.txt command file). Default for color expt = 174
 file1 = 'biosemi64xyz10-20.xyz'; % Modify for your experiment: Choose 64 or 32 channel location file
 file2 = 'garvparm.txt'; % Modify for your experiment 
-file3 = 'erpfiles.txt'; % Modify for your experiment: subject .erp files for grand average gavg
+file3 = 'erpfiles.txt'; % Modify for your experiment: subject .erp files for grand average gavg and meas
 set = '.set';
 
 %Flags for choosing operating systems
@@ -74,7 +74,7 @@ n=20; %modify here for the ONE subject you want % UNIVERSAL ONE
 artif_all = 1;   % (optional) after modify artif.m for each subject, mark artifacts for all subjects; set flag for all below to 1, if you want to avg or re-reference
 artif_one = 0;   % run single subject; set flag for one below to 1, if you want to avg or re-reference
 
-% Default flag must be 0 for eegrefch in standard processing order. 
+% EEG reref: Default flag must be 0 for eegrefch in standard processing order. 
 
 eegrefch = 0;    % Define reference channel for EEGLab analysis of biosemi data, default M12, option CAR
 m12 = 1;         % for average mastoids reference (for EEGs); Default
@@ -82,12 +82,18 @@ ca = 0;          % common average reference, in addition to standard mastoid ref
 
 avg = 0;         % avg EEG to create .erp file; creates 4 ERP averages (ar, all, bad, and ar with extra info)
 
-% When ready to re-reference: Default flag must be 1 for erpreref in standard processing order. 
+% ERP reref: When ready to re-reference: Default flag must be 1 for erpreref in standard processing order. 
 erprefch = 0;    % default M12, option CAR.
 M12 = 1;         % for average mastoids reference (for ERPs); Default
 CA = 0;          % for common average reference (for ERPs); 
 
-meas = 0;        % 
-gavg = 0;        % input required in CMD: 1 column list of subject .erp files with pathname in erpfiles.txt
+% FILTER: If measure filtered data, then filter each subject's ERP (after erprefch, if reref); else measure unfiltered and default 0. 
+erpfilt = 0;    % In erprefch, flag for  M12 or CA must be set to 1 (M12 or CA ERP to be filtered) or both M12 and CA set to 0 (recording reference): Determines input file.
+
+% GRAND AVERAGE
+gavg = 0;        % input required in CMD (or from 3files): 1 column list of subject .erp files with pathname in erpfiles.txt
+
+% MEASURE ERP
+meas = 0;        % input required in CMD (or from 3files): 1 column list of subject .erp files with pathname in erpfiles.txt
 
 fprintf('\n+++++++++++++++\n+ Setup Global and ERPLab Function Flags: done! ... \n+++++++++++++++\n\n');
